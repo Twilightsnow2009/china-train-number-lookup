@@ -6,8 +6,8 @@
 
 <!-- ============ 基础 SEO ============ -->
 <title>列车车次查询 | 新版车次编排速查 · G/T/K/D 字头含义与车型</title>
-<meta name="description" content="输入车次号即可查询新版列车车次的用途、运行范围、速度等级与可能车型。涵盖 X/G/T/K/D/C/S/Z/N/V/Y 旅客列车字头及 B/DH 货物列车字头，附字头速查表、两批切换时间与常见问题。">
-<meta name="keywords" content="列车车次查询,车次编排,新版车次,字头含义,G字头,T字头,K字头,D字头,动车组车型,列车车次编排规定,12306">
+<meta name="description" content="输入车次号即可查询新版列车车次的用途、运行范围、速度等级与可能车型。涵盖 X/G/T/K/D/C/S/Z/N/V/Y 旅客列车字头及 B/DH 货物列车字头，附字头速查表、特殊车次补充号段、两批切换时间与常见问题。">
+<meta name="keywords" content="列车车次查询,车次编排,新版车次,字头含义,G字头,T字头,K字头,D字头,动车组车型,0G回送,单机车次,救援列车,路用列车,列车车次编排规定,12306">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="车次编排查询">
 <meta name="format-detection" content="telephone=no">
@@ -17,7 +17,7 @@
 <meta name="theme-color" content="#0a2340">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6bcb'/%3E%3Cpath d='M9 22h14M10 22V10a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12M13 12h6M13 16h6' stroke='white' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
 
-<!-- ============ Open Graph / 社交分享 ============ -->
+<!-- ============ Open Graph ============ -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="车次编排查询">
@@ -89,18 +89,18 @@
     },
     {
       "@type": "Question",
-      "name": "如何判断一趟车可能使用的车型？",
+      "name": "0 开头的车次是什么？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "本页按字头与速度等级列出可能车型，如 G 字头常见 CR400AF/BF 系列，T 字头常见 CRH380 系列，D 字头为 CR200J 动集，C/S 字头为 CRH6 及 CJ 系列。具体以实际配属为准。"
+        "text": "0 开头表示空车回送，0 后面跟的是正式车次。例如 0G1 表示 G1 车次的空车底回送，用于动车组出库、回所、转场、热备等，车上只有司机和随车机械师，不载客。"
       }
     },
     {
       "@type": "Question",
-      "name": "纯数字车次现在代表什么？",
+      "name": "如何判断一趟车可能使用的车型？",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "1 至 4 位纯数字已不再用于旅客列车；5 位纯数字为大宗直达货物列车（71001–77998 重载、80001–84998 煤炭、85001–85998 石油）或路用列车。"
+        "text": "本页按字头与速度等级列出可能车型，如 G 字头常见 CR400AF/BF 系列，T 字头常见 CRH380 系列，D 字头为 CR200J 动集，C/S 字头为 CRH6 及 CJ 系列。具体以实际配属为准。"
       }
     }
   ]
@@ -148,6 +148,10 @@
     --orange-l:#fff1e8;
     --orange-d:#b8431a;
     --orange-b:#ffd8c4;
+    --yellow:#d99a1f;
+    --yellow-l:#fff8e6;
+    --yellow-d:#8a5a00;
+    --yellow-b:#ffe2a0;
     --gray-l:#eef1f5;
     --gray-d:#4e6178;
     --gray-b:#dfe5ee;
@@ -175,6 +179,10 @@
     --orange-l:#3d2115;
     --orange-d:#ff9e73;
     --orange-b:#5a3020;
+    --yellow:#f0b84a;
+    --yellow-l:#352a12;
+    --yellow-d:#e8c06a;
+    --yellow-b:#57441a;
     --gray-l:#1e2a38;
     --gray-d:#a9bccf;
     --gray-b:#2f4054;
@@ -199,7 +207,7 @@
 
   body, .topbar, .search, .card, .cell, .desc, .note, .seg, .head-card,
   .tl-card, .source-card, .point, .source-note, .fbtn, .model-tag, footer,
-  .read, .tag, .theme-btn, .faq-item {
+  .read, .tag, .theme-btn, .faq-item, .fold, .fold-body {
     transition: background-color .3s ease, border-color .3s ease, color .3s ease;
   }
 
@@ -356,6 +364,10 @@
   }
   @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.99);}to{opacity:1;transform:none;}}
 
+  .card.card-unverified{
+    border-top:4px solid var(--yellow);
+  }
+
   .card-top{
     display:flex;flex-wrap:wrap;align-items:center;gap:10px;
     padding-bottom:18px;margin-bottom:20px;
@@ -377,9 +389,11 @@
   .tag.p{background:var(--blue-l);color:var(--blue-d);border:1px solid var(--blue-b);}
   .tag.f{background:var(--orange-l);color:var(--orange-d);border:1px solid var(--orange-b);}
   .tag.w{background:var(--gray-l);color:var(--gray-d);border:1px solid var(--gray-b);}
+  .tag.u{background:var(--yellow-l);color:var(--yellow-d);border:1px solid var(--yellow-b);}
   .tag.batch{background:var(--surface-2);color:var(--muted);border:1px dashed var(--line);font-weight:600;}
   .tag.batch.on{background:#eefaf3;color:#127a48;border:1px solid #c7eed8;}
   [data-theme="dark"] .tag.batch.on{background:#12301f;color:#62d494;border-color:#1d5236;}
+  .tag.dead{background:var(--yellow-l);color:var(--yellow-d);border:1px solid var(--yellow-b);}
 
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;}
   .cell{
@@ -416,6 +430,7 @@
     background:var(--surface);border-left:3px solid var(--blue);
     padding:13px 16px;border-radius:0 11px 11px 0;
   }
+  .card-unverified .desc{border-left-color:var(--yellow);}
   .note{
     display:flex;gap:9px;align-items:flex-start;
     font-size:13.5px;color:var(--ink-2);
@@ -429,6 +444,8 @@
     display:flex;align-items:center;justify-content:center;margin-top:2px;
   }
   [data-theme="dark"] .note .ico{background:#1a2e46;color:#79bfff;}
+  .note.note-u{background:var(--yellow-l);border-color:var(--yellow-b);color:var(--yellow-d);}
+  .note.note-u .ico{background:var(--yellow-b);color:var(--yellow-d);}
   .warn{
     display:flex;gap:10px;
     background:#fff8e6;border:1px solid #ffe2a0;color:#8a5a00;
@@ -455,15 +472,26 @@
     border-color:var(--blue-b);color:var(--ink);font-weight:600;
     box-shadow:inset 3px 0 0 var(--blue);
   }
+  .card-unverified .seg.active{
+    background:linear-gradient(90deg,#fff8e6,#fffdf7);
+    border-color:var(--yellow-b);
+    box-shadow:inset 3px 0 0 var(--yellow);
+  }
   [data-theme="dark"] .seg.active{
     background:linear-gradient(90deg,#172b42,#152639);
     border-color:#2a4a6e;
+  }
+  [data-theme="dark"] .card-unverified .seg.active{
+    background:linear-gradient(90deg,#352a12,#2a2414);
+    border-color:#57441a;
   }
   .seg-range{
     font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
     font-size:12.5px;color:var(--blue-d);min-width:136px;letter-spacing:.03em;
   }
+  .card-unverified .seg-range{color:var(--yellow-d);}
   .seg.active .seg-range{color:var(--blue);}
+  .card-unverified .seg.active .seg-range{color:var(--yellow);}
   .seg-name{flex:1;min-width:150px;}
 
   .card-error{display:flex;gap:16px;align-items:flex-start;border-top:4px solid #ffb020;}
@@ -554,6 +582,116 @@
   }
   .head-card.f .head-segs b{color:var(--orange-d);}
   .head-card.w .head-segs b{color:var(--gray-d);}
+
+  /* ================= 折叠面板 ================= */
+  .fold{
+    margin-top:56px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .fold[open]{
+    border-color:var(--yellow-b);
+  }
+  .fold summary{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    padding:18px 22px;
+    cursor:pointer;
+    list-style:none;
+    font-size:15px;font-weight:700;color:var(--ink);
+    background:var(--surface);
+    border-bottom:1px solid transparent;
+    transition:background-color .2s, border-color .2s;
+    user-select:none;
+  }
+  .fold summary::-webkit-details-marker{display:none;}
+  .fold summary:hover{background:var(--surface-2);}
+  .fold[open] summary{border-bottom-color:var(--yellow-b);}
+  .fold-ico{
+    flex:0 0 auto;
+    width:26px;height:26px;border-radius:8px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--yellow-l);color:var(--yellow-d);
+    border:1px solid var(--yellow-b);
+    font-size:16px;font-weight:800;line-height:1;
+    transition:transform .22s ease;
+  }
+  .fold[open] .fold-ico{transform:rotate(45deg);}
+  .fold-badge{
+    font-size:11px;font-weight:700;letter-spacing:.08em;
+    padding:3px 10px;border-radius:999px;
+    background:var(--yellow-l);color:var(--yellow-d);
+    border:1px solid var(--yellow-b);
+  }
+  .fold-hint{
+    margin-left:auto;
+    font-size:12px;font-weight:500;color:var(--muted);
+    letter-spacing:.02em;
+  }
+  .fold[open] .fold-hint::after{content:"已展开";}
+  .fold:not([open]) .fold-hint::after{content:"点击展开";}
+  .fold-body{padding:8px 22px 24px;}
+
+  .fold-intro{
+    font-size:13px;color:var(--muted);
+    margin:12px 0 18px;
+    padding:10px 14px;
+    background:var(--yellow-l);
+    border:1px solid var(--yellow-b);
+    border-radius:10px;
+    color:var(--yellow-d);
+  }
+
+  .extra-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+    display:block;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+  }
+  .extra-table thead{display:table-header-group;}
+  .extra-table tbody{display:table-row-group;}
+  .extra-table tr{display:table-row;}
+  .extra-table th, .extra-table td{
+    display:table-cell;
+    padding:10px 12px;
+    text-align:left;
+    vertical-align:top;
+    border-bottom:1px solid var(--line-2);
+    white-space:normal;
+  }
+  .extra-table{
+    display:table;
+    min-width:720px;
+  }
+  .extra-table th{
+    font-size:11.5px;letter-spacing:.08em;color:var(--muted);
+    font-weight:600;background:var(--surface);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:1;
+  }
+  .extra-table td:first-child{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-weight:700;color:var(--yellow-d);
+    white-space:nowrap;
+    font-size:12.5px;
+  }
+  .extra-table tr:hover td{background:var(--surface);}
+  .extra-table .can-no{color:var(--yellow-d);font-weight:700;white-space:nowrap;}
+  .extra-table .can-yes{color:#127a48;font-weight:700;white-space:nowrap;}
+  [data-theme="dark"] .extra-table .can-yes{color:#62d494;}
+  .extra-table .sub-note{color:var(--muted);font-size:12.5px;}
+
+  .fold-sub{
+    margin:22px 0 10px;
+    font-size:13px;font-weight:700;letter-spacing:.06em;
+    color:var(--yellow-d);
+    display:flex;align-items:center;gap:8px;
+  }
+  .fold-sub::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--yellow-b),transparent);}
 
   /* ================= 常见问答 ================= */
   .faq{margin-top:60px;}
@@ -663,6 +801,11 @@
     .head-grid{grid-template-columns:1fr;}
     .intro{padding:16px 18px;font-size:13.5px;}
     .faq-item{padding:16px 18px;}
+    .fold summary{padding:15px 16px;font-size:14px;}
+    .fold-body{padding:6px 14px 18px;}
+    .fold-hint{display:none;}
+    .extra-table{font-size:12px;}
+    .extra-table th, .extra-table td{padding:8px 10px;}
   }
 </style>
 </head>
@@ -676,6 +819,7 @@
   <div class="topbar-right">
     <nav aria-label="页面导航">
       <a href="#rules">字头速查</a>
+      <a href="#extra">特殊车次</a>
       <a href="#faq">常见问答</a>
       <a href="#source">编排依据</a>
     </nav>
@@ -704,9 +848,9 @@
     <p class="sub">输入车次号，一眼看懂这趟车的 <b>用途</b>、<b>运行范围</b>、<b>可能车型</b> 与 <b>实施批次</b></p>
 
     <form class="search" id="form" autocomplete="off" role="search">
-      <label class="sr-only" for="input">输入要查询的列车车次，例如 G1、D27、Z19</label>
+      <label class="sr-only" for="input">输入要查询的列车车次，例如 G1、D27、Z19、0G1</label>
       <input id="input" type="text" maxlength="10" name="code"
-             placeholder="如 G1、D27、Z19、V6001、B2001、DH1、71001"
+             placeholder="如 G1、D27、Z19、0G1、B2001、DJ5"
              aria-label="输入列车车次查询">
       <button type="submit">查 询</button>
     </form>
@@ -726,8 +870,9 @@
       <strong>列车车次查询</strong>是一个依据 2026 年新版《列车车次编排规定》整理的静态查询工具。
       输入任意车次号，即可查看该车次的<strong>用途 / 产品类别</strong>、<strong>速度等级</strong>、
       <strong>运行范围</strong>与<strong>可能车型</strong>。新版车次按旅客列车、货物列车、路用列车分类，
-      构建了“分类清晰、层次分明、直观易记”的编码体系；新旧车次分两批切换，
-      第一批为普速与货运，第二批为高速与城际。
+      构建了“分类清晰、层次分明、直观易记”的编码体系；新旧车次分两批切换。
+      以 <code>0</code> 开头的车次表示空车回送，<code>0</code> 后面跟的是正式车次（如 <code>0G1</code> 即 G1 的空车底回送），
+      车上只有司机与随车机械师，不载客。
     </p>
   </section>
 
@@ -757,7 +902,7 @@
     </div>
   </section>
 
-  <!-- 字头速查表（静态 HTML，便于搜索引擎抓取） -->
+  <!-- 字头速查表 -->
   <section class="rules" id="rules" aria-labelledby="rules-title">
     <div class="sec-head">
       <h2 id="rules-title">字头速查表</h2>
@@ -773,115 +918,87 @@
 
     <div class="head-grid" id="headGrid">
 
-      <!-- X -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">X</div>
         <div class="head-body">
           <div class="head-title">读作「新」</div>
           <div class="head-cat">高速旅客列车 · 第二批</div>
-          <ul class="head-segs">
-            <li><b>X1–X9998</b> 复兴号动车组列车（新时速）</li>
-          </ul>
+          <ul class="head-segs"><li><b>X1–X9998</b> 复兴号动车组列车（新时速）</li></ul>
         </div>
       </div>
 
-      <!-- G -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">G</div>
         <div class="head-body">
           <div class="head-title">读作「高」</div>
           <div class="head-cat">高速旅客列车 · 第二批</div>
-          <ul class="head-segs">
-            <li><b>G1–G9998</b> 复兴号动车组列车</li>
-          </ul>
+          <ul class="head-segs"><li><b>G1–G9998</b> 复兴号动车组列车</li></ul>
         </div>
       </div>
 
-      <!-- T -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">T</div>
         <div class="head-body">
           <div class="head-title">读作「特」</div>
           <div class="head-cat">高速旅客列车 · 第二批</div>
-          <ul class="head-segs">
-            <li><b>T1–T9998</b> 动车组列车（300 公里级）</li>
-          </ul>
+          <ul class="head-segs"><li><b>T1–T9998</b> 动车组列车（300 公里级）</li></ul>
         </div>
       </div>
 
-      <!-- K -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">K</div>
         <div class="head-body">
           <div class="head-title">读作「快」</div>
           <div class="head-cat">高速旅客列车 · 第二批</div>
-          <ul class="head-segs">
-            <li><b>K1–K9998</b> 动车组列车（200–250 公里级）</li>
-          </ul>
+          <ul class="head-segs"><li><b>K1–K9998</b> 动车组列车（200–250 公里级）</li></ul>
         </div>
       </div>
 
-      <!-- D -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">D</div>
         <div class="head-body">
           <div class="head-title">读作「动」</div>
           <div class="head-cat">动集旅客列车 · 第二批</div>
-          <ul class="head-segs">
-            <li><b>D1–D9998</b> 动力集中动车组列车</li>
-          </ul>
+          <ul class="head-segs"><li><b>D1–D9998</b> 动力集中动车组列车</li></ul>
         </div>
       </div>
 
-      <!-- C -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">C</div>
         <div class="head-body">
           <div class="head-title">读作「城」</div>
           <div class="head-cat">城际旅客列车 · 第二批</div>
-          <ul class="head-segs">
-            <li><b>C1–C2998</b> 城际铁路动车组列车</li>
-          </ul>
+          <ul class="head-segs"><li><b>C1–C2998</b> 城际铁路动车组列车</li></ul>
         </div>
       </div>
 
-      <!-- S -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">S</div>
         <div class="head-body">
           <div class="head-title">读作「市郊」</div>
           <div class="head-cat">市郊（域）旅客列车 · 第二批</div>
-          <ul class="head-segs">
-            <li><b>S1–S2998</b> 市郊（域）旅客列车</li>
-          </ul>
+          <ul class="head-segs"><li><b>S1–S2998</b> 市郊（域）旅客列车</li></ul>
         </div>
       </div>
 
-      <!-- Z -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">Z</div>
         <div class="head-body">
           <div class="head-title">读作「英文字母 Z」</div>
           <div class="head-cat">普速旅客列车 · 第一批</div>
-          <ul class="head-segs">
-            <li><b>Z1–Z1998</b> 快速旅客列车（直达特快）</li>
-          </ul>
+          <ul class="head-segs"><li><b>Z1–Z1998</b> 快速旅客列车（直达特快）</li></ul>
         </div>
       </div>
 
-      <!-- N -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">N</div>
         <div class="head-body">
           <div class="head-title">读作「英文字母 N」</div>
           <div class="head-cat">普速旅客列车 · 第一批</div>
-          <ul class="head-segs">
-            <li><b>N1–N1998</b> 快速旅客列车</li>
-          </ul>
+          <ul class="head-segs"><li><b>N1–N1998</b> 快速旅客列车</li></ul>
         </div>
       </div>
 
-      <!-- V -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">V</div>
         <div class="head-body">
@@ -895,7 +1012,6 @@
         </div>
       </div>
 
-      <!-- Y -->
       <div class="head-card p" data-g="p">
         <div class="head-badge" aria-hidden="true">Y</div>
         <div class="head-body">
@@ -908,7 +1024,6 @@
         </div>
       </div>
 
-      <!-- B -->
       <div class="head-card f" data-g="f">
         <div class="head-badge" aria-hidden="true">B</div>
         <div class="head-body">
@@ -924,7 +1039,6 @@
         </div>
       </div>
 
-      <!-- DH -->
       <div class="head-card f" data-g="f">
         <div class="head-badge" aria-hidden="true">DH</div>
         <div class="head-body">
@@ -937,19 +1051,15 @@
         </div>
       </div>
 
-      <!-- DJ -->
       <div class="head-card w" data-g="w">
         <div class="head-badge" aria-hidden="true">DJ</div>
         <div class="head-body">
           <div class="head-title">读作「动检」</div>
           <div class="head-cat">路用列车 · 未单列</div>
-          <ul class="head-segs">
-            <li><b>DJ＋1~5 位数字</b> 动车组检测、确认列车</li>
-          </ul>
+          <ul class="head-segs"><li><b>DJ＋1~5 位数字</b> 动车组检测、确认列车</li></ul>
         </div>
       </div>
 
-      <!-- 5 位纯数字 -->
       <div class="head-card f" data-g="f">
         <div class="head-badge" aria-hidden="true">5位</div>
         <div class="head-body">
@@ -967,6 +1077,320 @@
     </div>
   </section>
 
+  <!-- ================= 折叠面板：特殊车次与补充号段 ================= -->
+  <details class="fold" id="extra">
+    <summary>
+      <span class="fold-ico" aria-hidden="true">＋</span>
+      <span>特殊车次与补充号段</span>
+      <span class="fold-badge">未核实</span>
+      <span class="fold-hint" aria-hidden="true"></span>
+    </summary>
+
+    <div class="fold-body">
+
+      <p class="fold-intro">
+        以下内容为补充整理的特殊车次、回送车次与非图定号段，<strong>标注为“未核实”</strong>。
+        其中 <code>0</code> 开头的回送车次遵循 2026 年新版规则：<code>0</code> 后跟正式车次，车上仅有司机与随车机械师，不载客。
+        与上文已核实号段重叠的条目，以已核实号段为准。
+      </p>
+
+      <p class="fold-sub">0 开头回送车次</p>
+      <table class="extra-table">
+        <thead>
+          <tr>
+            <th scope="col">车次标识</th>
+            <th scope="col">官方类别</th>
+            <th scope="col">核心用途</th>
+            <th scope="col">普通旅客能否乘坐</th>
+            <th scope="col">补充说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0G / 0D / 0C / 0X / 0Z / 0T / 0K / 0Y</td>
+            <td>空客车底回送</td>
+            <td>动车 / 普速车底出库、回所、转场、热备、换线调动</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">0 后跟正式车次，如 0G1 即 G1 空车回送；车上只有司机、随车机械师。</td>
+          </tr>
+          <tr>
+            <td>0J</td>
+            <td>检测类动车组空车回送</td>
+            <td>动检车空车转场回送</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">DJ 是上线检测，0J 是 DJ 空车调动。</td>
+          </tr>
+          <tr>
+            <td>0S</td>
+            <td>市郊动车组空车回送</td>
+            <td>S 字头市郊车空车周转</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">市郊 / 市域动车出入库调动。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="fold-sub">厂修回送与返厂</p>
+      <table class="extra-table">
+        <thead>
+          <tr>
+            <th scope="col">车次标识</th>
+            <th scope="col">官方类别</th>
+            <th scope="col">核心用途</th>
+            <th scope="col">普通旅客能否乘坐</th>
+            <th scope="col">补充说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>001～00298</td>
+            <td>厂修客车回送</td>
+            <td>客车送厂大修、修竣返回的整列客车</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">长距离送修客车编组，区别于日常 0G 短距离转场。</td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td>返厂列车</td>
+            <td>动车组、车辆送大修厂、修完返回</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">车辆故障、到期高级修转运。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="fold-sub">检测与路用列车</p>
+      <table class="extra-table">
+        <thead>
+          <tr>
+            <th scope="col">车次标识</th>
+            <th scope="col">官方类别</th>
+            <th scope="col">核心用途</th>
+            <th scope="col">普通旅客能否乘坐</th>
+            <th scope="col">补充说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DJ</td>
+            <td>动车组检测列车（动检 / 确认车）</td>
+            <td>线路检查、轨道、信号、接触网确认；每日天窗后首趟确认车</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">俗称“黄医生”、动检车；车上是检测、添乘人员。</td>
+          </tr>
+          <tr>
+            <td>DJW</td>
+            <td>无砟轨道专项动检</td>
+            <td>高铁无砟线路专项检测</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">多用于新线联调联试。</td>
+          </tr>
+          <tr>
+            <td>55001～55998</td>
+            <td>试运转列车</td>
+            <td>新车、修竣车、新线联调联试逐级提速试验</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">新车下线测试、检修后跑试验，联调联试经常见到。</td>
+          </tr>
+          <tr>
+            <td>56001～56998</td>
+            <td>轨道车、轻型动车</td>
+            <td>工务轨道车、接触网作业车上线</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">小型工程车辆。</td>
+          </tr>
+          <tr>
+            <td>57001～57998</td>
+            <td>路用列车</td>
+            <td>运送工料、机具、铁路作业人员；线路维修</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">拉钢轨、道砟、施工物资，天窗施工主力。</td>
+          </tr>
+          <tr>
+            <td>58101～58998</td>
+            <td>救援列车</td>
+            <td>事故救援、起复演练、应急救援出动</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">救援吊车、救援编组。</td>
+          </tr>
+          <tr>
+            <td>59001～59998</td>
+            <td>除雪、打冰热滑列车</td>
+            <td>雨雪天热滑、道岔打冰除雪动车组 / 机车</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">下雪天常见，用来压冰、确认线路状态。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="fold-sub">单机、补机与枢纽小运转</p>
+      <table class="extra-table">
+        <thead>
+          <tr>
+            <th scope="col">车次标识</th>
+            <th scope="col">官方类别</th>
+            <th scope="col">核心用途</th>
+            <th scope="col">普通旅客能否乘坐</th>
+            <th scope="col">补充说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>50001～50998</td>
+            <td>客车单机</td>
+            <td>客运机车单独跑，去挂车、转机务段</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">只有车头，无车厢。</td>
+          </tr>
+          <tr>
+            <td>51001～51998</td>
+            <td>货车单机</td>
+            <td>货运机车单机转线</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">货运本务机车调动。</td>
+          </tr>
+          <tr>
+            <td>52001～52998</td>
+            <td>小运转单机</td>
+            <td>枢纽内短距离单机调动</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">站内、枢纽小范围挪车头。</td>
+          </tr>
+          <tr>
+            <td>53001～54998</td>
+            <td>补机</td>
+            <td>补机推送、附挂运行（长大坡道加补机）</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">只负责帮忙推车，不担当本务。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="fold-sub">货运与军事运输</p>
+      <table class="extra-table">
+        <thead>
+          <tr>
+            <th scope="col">车次标识</th>
+            <th scope="col">官方类别</th>
+            <th scope="col">核心用途</th>
+            <th scope="col">普通旅客能否乘坐</th>
+            <th scope="col">补充说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>40001～44998</td>
+            <td>摘挂货物列车</td>
+            <td>沿途多个小站甩挂、送小批量货</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">俗称“小慢货”，沿线中间站调车作业多。</td>
+          </tr>
+          <tr>
+            <td>45001～45998</td>
+            <td>区段小运转列车</td>
+            <td>枢纽、编组站之间短距离货车流转</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">只在枢纽内部跑，不跑长线。</td>
+          </tr>
+          <tr>
+            <td>70001～70998</td>
+            <td>保温列车（机保）</td>
+            <td>冷藏车组，生鲜、冷链货物</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">自带制冷机组。</td>
+          </tr>
+          <tr>
+            <td>71001～71998</td>
+            <td>超限货物列车</td>
+            <td>超宽、超高、超长大件（变压器、桥梁构件）</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">运行限速、专人盯控，提前清线。与已核实重载号段有重叠，以已核实为准。</td>
+          </tr>
+          <tr>
+            <td>73001～73998</td>
+            <td>重载货物列车</td>
+            <td>万吨、两万吨重载煤炭货运列车</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">大秦、浩吉这类重载干线多见。与已核实号段有重叠，以已核实为准。</td>
+          </tr>
+          <tr>
+            <td>90001～91998</td>
+            <td>军用列车</td>
+            <td>军用物资、兵员运输</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">军交调度，单独管理。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="fold-sub">通勤与专运</p>
+      <table class="extra-table">
+        <thead>
+          <tr>
+            <th scope="col">车次标识</th>
+            <th scope="col">官方类别</th>
+            <th scope="col">核心用途</th>
+            <th scope="col">普通旅客能否乘坐</th>
+            <th scope="col">补充说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>80001～89998</td>
+            <td>路内通勤列车</td>
+            <td>铁路职工通勤车</td>
+            <td class="can-yes">⚠️ 仅限内部职工</td>
+            <td class="sub-note">俗称“职工车”，不对外卖票，部分支线有。与已核实煤炭、石油号段有重叠，以已核实为准。</td>
+          </tr>
+          <tr>
+            <td>Q</td>
+            <td>抢险救灾列车</td>
+            <td>地震、洪水、灾害应急物资、救援人员输送</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">救灾专列，优先放行，绿色通道最高等级。</td>
+          </tr>
+          <tr>
+            <td>ZY / 9001–9998</td>
+            <td>专运列车</td>
+            <td>重要公务专列、特种包运公务车</td>
+            <td class="can-no">❌ 禁止</td>
+            <td class="sub-note">单独调度、保密运行，等级极高。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="fold-sub">旧版字头（已停用）</p>
+      <table class="extra-table">
+        <thead>
+          <tr>
+            <th scope="col">车次标识</th>
+            <th scope="col">官方类别</th>
+            <th scope="col">核心用途</th>
+            <th scope="col">普通旅客能否乘坐</th>
+            <th scope="col">补充说明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>L（旧）</td>
+            <td>临时旅客列车（临客）</td>
+            <td>客流暴涨临时加开</td>
+            <td class="can-yes">✅ 旧版可买票</td>
+            <td class="sub-note">新版不再用 L；现在临客多用原图字头临时号段。</td>
+          </tr>
+          <tr>
+            <td>A（旧）</td>
+            <td>管内临时加车</td>
+            <td>管内短途应急加开临客</td>
+            <td class="can-yes">✅ 旧版可买票</td>
+            <td class="sub-note">等级比 L 更低，现已基本停用。</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </details>
+
   <!-- 常见问答 -->
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <div class="sec-head">
@@ -979,8 +1403,8 @@
         <dd>字头重新分配：<code>T</code>、<code>K</code> 字头从普速改为高速动车组，普速特快与快速分别改为 <code>N</code>、<code>V</code>；新增 <code>X</code> 字头（更高速度复兴号）与 <code>DH</code> 字头（货运动车组）；<code>G</code> 字头专指 350 公里级复兴号；<code>C</code>、<code>S</code> 字头收窄适用范围。</dd>
       </div>
       <div class="faq-item">
-        <dt>G、T、K 字头现在分别代表什么？</dt>
-        <dd><code>G</code> 读“高”，表示最高运行时速 350 公里的复兴号动车组；<code>T</code> 读“特”，表示最高运行时速 300 公里的动车组；<code>K</code> 读“快”，表示最高运行时速 200 至 250 公里的动车组。</dd>
+        <dt>0 开头的车次是什么？</dt>
+        <dd><code>0</code> 开头表示空车回送，<code>0</code> 后面跟的是正式车次。例如 <code>0G1</code> 表示 G1 车次的空车底回送，用于动车组出库、回所、转场、热备等，车上只有司机和随车机械师，不载客。</dd>
       </div>
       <div class="faq-item">
         <dt>为什么用旧车次查不到了？</dt>
@@ -992,7 +1416,7 @@
       </div>
       <div class="faq-item">
         <dt>纯数字车次现在代表什么？</dt>
-        <dd>1 至 4 位纯数字已不再用于旅客列车；5 位纯数字为大宗直达货物列车（71001–77998 重载、80001–84998 煤炭、85001–85998 石油）或路用列车。</dd>
+        <dd>1 至 4 位纯数字已不再用于旅客列车（<code>001–298</code> 为厂修客车回送，属特殊回送）；5 位纯数字为大宗直达货物列车（71001–77998 重载、80001–84998 煤炭、85001–85998 石油）或单机、路用、救援等特殊列车。</dd>
       </div>
     </dl>
   </section>
@@ -1029,8 +1453,8 @@
       </div>
 
       <p class="source-note">
-        本页所有字头含义、号段范围、速度等级与实施批次，均依据该访谈所述新版《列车车次编排规定》整理；
-        车型为按速度等级与产品类别推测的可能范围，具体以铁路 12306、95306 及车站公告为准。
+        本页字头含义、号段范围、速度等级与实施批次，依据该访谈所述新版《列车车次编排规定》整理；
+        “特殊车次与补充号段”中的条目为补充整理，标注为<strong>未核实</strong>，具体以铁路 12306、95306 及车站公告为准。
       </p>
     </article>
   </section>
@@ -1042,6 +1466,7 @@
   出行前请核对列车车次、到发车站与运行时刻，以免误购误乘
   <div class="footer-links">
     <a href="#rules">字头速查</a> ·
+    <a href="#extra">特殊车次</a> ·
     <a href="#faq">常见问答</a> ·
     <a href="#source">编排依据</a>
   </div>
@@ -1049,7 +1474,7 @@
 
 <script>
 /* =======================================================
-   一、字头规则数据（用于查询解析）
+   一、已核实字头规则数据（含可能车型）
    ======================================================= */
 const HEADS = {
   X: {
@@ -1181,6 +1606,7 @@ const HEADS = {
   }
 };
 
+/* 已核实 5 位纯数字号段 */
 const NUMERIC_GROUPS = [
   { from: 71001, to: 77998, product: '重载货物列车', speed: '最高运行时速 90 公里', scope: '主要煤运通道等重载运输线路',
     desc: '大宗直达货物列车，服务电煤、粮食、春耕化肥等国计民生重点物资运输，实行运力倾斜、优先保障。' },
@@ -1191,7 +1617,127 @@ const NUMERIC_GROUPS = [
 ];
 
 /* =======================================================
-   二、查询逻辑
+   二、未核实补充数据
+   ======================================================= */
+const UNVERIFIED = {
+  /* 未核实字头 */
+  heads: {
+    F: {
+      read: '返厂', cat: '返厂回送', group: 'w', batch: '未单列',
+      product: '返厂列车', speed: '按回送条件',
+      scope: '动车组、车辆送大修厂、修完返回',
+      desc: '车辆故障、到期高级修转运。',
+      passenger: false
+    },
+    DJW: {
+      read: '动检', cat: '路用列车', group: 'w', batch: '未单列',
+      product: '无砟轨道专项动检', speed: '按检测作业需要',
+      scope: '高铁无砟线路专项检测',
+      desc: '多用于新线联调联试。',
+      passenger: false
+    },
+    Q: {
+      read: '抢', cat: '抢险救灾', group: 'w', batch: '未单列',
+      product: '抢险救灾列车', speed: '按调度',
+      scope: '地震、洪水、灾害应急物资、救援人员输送',
+      desc: '救灾专列，优先放行，绿色通道最高等级。',
+      passenger: false
+    },
+    ZY: {
+      read: '专运', cat: '专运列车', group: 'w', batch: '未单列',
+      product: '专运列车', speed: '按调度',
+      scope: '重要公务专列、特种包运公务车',
+      desc: '单独调度、保密运行，等级极高。',
+      passenger: false
+    },
+    L: {
+      read: '临', cat: '临时旅客列车（旧）', group: 'p', batch: '已停用',
+      product: '临时旅客列车（旧字头）', speed: '按图定',
+      scope: '客流暴涨临时加开',
+      desc: '新版已不再使用 L 字头，临客多用原图字头临时号段。旧版可买票。',
+      passenger: true, deprecated: true
+    },
+    A: {
+      read: '管临', cat: '管内临时加车（旧）', group: 'p', batch: '已停用',
+      product: '管内临时加车（旧字头）', speed: '按图定',
+      scope: '管内短途应急加开临客',
+      desc: '等级比 L 更低，现已基本停用。旧版可买票。',
+      passenger: true, deprecated: true
+    }
+  },
+
+  /* 未核实数字号段（5 位为主，含 001–298 三位） */
+  numeric: [
+    { from: 1, to: 298, pad: 3, product: '厂修客车回送', speed: '按回送条件',
+      scope: '客车送厂大修、修竣返回的整列客车',
+      desc: '长距离送修客车编组，区别于日常 0G 短距离转场。', passenger: false, conflict: false },
+    { from: 40001, to: 44998, product: '摘挂货物列车', speed: '最高运行时速 90 公里',
+      scope: '沿途多个小站甩挂、送小批量货',
+      desc: '俗称“小慢货”，沿线中间站调车作业多。', passenger: false, conflict: false },
+    { from: 45001, to: 45998, product: '区段小运转列车', speed: '最高运行时速 90 公里',
+      scope: '枢纽、编组站之间短距离货车流转',
+      desc: '只在枢纽内部跑，不跑长线。', passenger: false, conflict: false },
+    { from: 50001, to: 50998, product: '客车单机', speed: '按调车速度',
+      scope: '客运机车单独跑，去挂车、转机务段',
+      desc: '只有车头，无车厢。', passenger: false, conflict: false },
+    { from: 51001, to: 51998, product: '货车单机', speed: '按调车速度',
+      scope: '货运机车单机转线',
+      desc: '货运本务机车调动。', passenger: false, conflict: false },
+    { from: 52001, to: 52998, product: '小运转单机', speed: '按调车速度',
+      scope: '枢纽内短距离单机调动',
+      desc: '站内、枢纽小范围挪车头。', passenger: false, conflict: false },
+    { from: 53001, to: 54998, product: '补机', speed: '按附挂条件',
+      scope: '补机推送、附挂运行（长大坡道加补机）',
+      desc: '只负责帮忙推车，不担当本务。', passenger: false, conflict: false },
+    { from: 55001, to: 55998, product: '试运转列车', speed: '逐级提速',
+      scope: '新车、修竣车、新线联调联试逐级提速试验',
+      desc: '新车下线测试、检修后跑试验，联调联试经常见到。', passenger: false, conflict: false },
+    { from: 56001, to: 56998, product: '轨道车、轻型动车', speed: '按作业需要',
+      scope: '工务轨道车、接触网作业车上线',
+      desc: '小型工程车辆。', passenger: false, conflict: false },
+    { from: 57001, to: 57998, product: '路用列车', speed: '按作业需要',
+      scope: '运送工料、机具、铁路作业人员；线路维修',
+      desc: '拉钢轨、道砟、施工物资，天窗施工主力。', passenger: false, conflict: false },
+    { from: 58101, to: 58998, product: '救援列车', speed: '按救援需要',
+      scope: '事故救援、起复演练、应急救援出动',
+      desc: '救援吊车、救援编组。', passenger: false, conflict: false },
+    { from: 59001, to: 59998, product: '除雪、打冰热滑列车', speed: '按作业需要',
+      scope: '雨雪天热滑、道岔打冰除雪动车组 / 机车',
+      desc: '下雪天常见，用来压冰、确认线路状态。', passenger: false, conflict: false },
+    { from: 70001, to: 70998, product: '保温列车（机保）', speed: '最高运行时速 90 公里',
+      scope: '冷藏车组，生鲜、冷链货物',
+      desc: '自带制冷机组。', passenger: false, conflict: false },
+    { from: 71001, to: 71998, product: '超限货物列车', speed: '运行限速',
+      scope: '超宽、超高、超长大件（变压器、桥梁构件）',
+      desc: '运行限速、专人盯控，提前清线。', passenger: false, conflict: true },
+    { from: 73001, to: 73998, product: '重载货物列车', speed: '最高运行时速 90 公里',
+      scope: '万吨、两万吨重载煤炭货运列车',
+      desc: '大秦、浩吉这类重载干线多见。', passenger: false, conflict: true },
+    { from: 80001, to: 89998, product: '路内通勤列车', speed: '按图定',
+      scope: '铁路职工通勤车',
+      desc: '俗称“职工车”，不对外卖票，部分支线有。仅限内部职工。', passenger: 'staff', conflict: true },
+    { from: 90001, to: 91998, product: '军用列车', speed: '按军交调度',
+      scope: '军用物资、兵员运输',
+      desc: '军交调度，单独管理。', passenger: false, conflict: false }
+  ],
+
+  /* 0 开头回送说明 */
+  zeroPrefix: {
+    G: { label: '动车底空车回送', desc: '动车组出库、回所、转场、热备、换线调动，车上只有司机、随车机械师。' },
+    D: { label: '动集车底空车回送', desc: '动力集中动车组出库、回所、转场等空车调动。' },
+    C: { label: '城际动车空车回送', desc: '城际动车组出入库、转场等空车调动。' },
+    X: { label: '新时速动车空车回送', desc: '新一代动车组空车转场、回送。' },
+    Z: { label: '普速客车空车回送', desc: '直达特快客车底空车回送、转场。' },
+    T: { label: '动车空车回送', desc: '300 公里级动车组空车回送。' },
+    K: { label: '动车空车回送', desc: '200–250 公里级动车组空车回送。' },
+    Y: { label: '旅游列车空车回送', desc: '旅游列车车底空车回送、转场。' },
+    J: { label: '动检空车回送', desc: 'DJ 是上线检测，0J 是 DJ 空车调动。' },
+    S: { label: '市郊动车空车回送', desc: '市郊 / 市域动车出入库调动。' }
+  }
+};
+
+/* =======================================================
+   三、查询逻辑
    ======================================================= */
 function normalize(raw) {
   if (!raw) return '';
@@ -1204,38 +1750,103 @@ function normalize(raw) {
 
 function lookup(raw) {
   const code = normalize(raw);
-  if (!code) return { status: 'empty', msg: '请输入要查询的车次，例如 G1、D27、Z19、B2001。' };
-  if (/^\d+$/.test(code)) return lookupNumeric(code);
+  if (!code) return { status: 'empty', msg: '请输入要查询的车次，例如 G1、D27、Z19、0G1、B2001。' };
 
-  const m = code.match(/^([A-Z]{1,2})(\d{1,5})$/);
-  if (!m) return { status: 'invalid', msg: '车次格式不正确。新版车次一般由 1–2 位字头字母加 1–4 位数字组成（如 G1、D27、DH1、DJ5）；大宗直达货物列车为 5 位纯数字（如 71001）。' };
-
-  const head = m[1], numStr = m[2], num = Number(numStr), def = HEADS[head];
-  if (!def) return { status: 'invalid', msg: '未识别字头「' + head + '」。新版编排可用的字头有：X、G、T、K、D、C、S、Z、N、V、Y（旅客列车），B、DH（货物列车），DJ（路用列车）。' };
-
-  let seg = def.segs.find(s => num >= s.from && num <= s.to);
-  let warn = '';
-  if (!seg) {
-    seg = def.segs.slice().sort((a, b) => {
-      const da = Math.min(Math.abs(num - a.from), Math.abs(num - a.to));
-      const db = Math.min(Math.abs(num - b.from), Math.abs(num - b.to));
-      return da - db;
-    })[0];
-    warn = '数字「' + numStr + '」不在 ' + head + ' 字头的规定号段内，以下按最接近的号段归类，请核对车次。';
+  /* 0 开头回送：0 + 正式车次 */
+  const zeroM = code.match(/^0([A-Z]{1,2})(\d{1,5})$/);
+  if (zeroM) {
+    const realHead = zeroM[1];
+    const realNum = zeroM[2];
+    const real = lookup(realHead + realNum);
+    if (real.status === 'ok') {
+      const z = UNVERIFIED.zeroPrefix[realHead] || {};
+      return Object.assign({}, real, {
+        code: code,
+        isDeadhead: true,
+        deadheadLabel: z.label || '空车回送',
+        deadheadDesc: z.desc || '空车底回送、转场、热备等，车上只有司机与随车机械师，不载客。',
+        unverified: true,
+        warn: ''
+      });
+    }
+    return real;
   }
 
-  return {
-    status: 'ok', code: head + numStr, head: head, read: def.read, cat: def.cat,
-    group: def.group, batch: def.batch, notes: def.notes, models: def.models || null,
-    segs: def.segs, segObj: seg, product: seg.product, speed: seg.speed,
-    scope: seg.scope, desc: seg.desc,
-    segLabel: seg.label || (head + seg.from + '–' + head + seg.to), warn: warn
-  };
+  /* 纯数字 */
+  if (/^\d+$/.test(code)) return lookupNumeric(code);
+
+  /* 字母 + 数字 */
+  const m = code.match(/^([A-Z]{1,2})(\d{1,5})$/);
+  if (!m) {
+    return { status: 'invalid', msg: '车次格式不正确。新版车次一般由 1–2 位字头字母加 1–5 位数字组成（如 G1、D27、DH1、DJ5、0G1）；特殊回送为 0 加正式车次；大宗直达货物列车为 5 位纯数字（如 71001）。' };
+  }
+
+  const head = m[1], numStr = m[2], num = Number(numStr);
+
+  /* 已核实字头优先 */
+  const def = HEADS[head];
+  if (def) {
+    let seg = def.segs.find(s => num >= s.from && num <= s.to);
+    let warn = '';
+    if (!seg) {
+      seg = def.segs.slice().sort((a, b) => {
+        const da = Math.min(Math.abs(num - a.from), Math.abs(num - a.to));
+        const db = Math.min(Math.abs(num - b.from), Math.abs(num - b.to));
+        return da - db;
+      })[0];
+      warn = '数字「' + numStr + '」不在 ' + head + ' 字头的规定号段内，以下按最接近的号段归类，请核对车次。';
+    }
+    return {
+      status: 'ok', code: head + numStr, head: head, read: def.read, cat: def.cat,
+      group: def.group, batch: def.batch, notes: def.notes, models: def.models || null,
+      segs: def.segs, segObj: seg, product: seg.product, speed: seg.speed,
+      scope: seg.scope, desc: seg.desc,
+      segLabel: seg.label || (head + seg.from + '–' + head + seg.to), warn: warn
+    };
+  }
+
+  /* 未核实字头 */
+  const u = UNVERIFIED.heads[head];
+  if (u) {
+    return {
+      status: 'ok', code: head + numStr, head: head, read: u.read, cat: u.cat,
+      group: u.group, batch: u.batch, notes: u.desc, models: null,
+      segs: [], segObj: null, product: u.product, speed: u.speed,
+      scope: u.scope, desc: u.desc,
+      segLabel: head + numStr,
+      warn: '',
+      unverified: true,
+      passenger: u.passenger
+    };
+  }
+
+  return { status: 'invalid', msg: '未识别字头「' + head + '」。已核实的字头有：X、G、T、K、D、C、S、Z、N、V、Y（旅客列车），B、DH（货物列车），DJ（路用列车）。特殊字头（F、DJW、Q、ZY、L、A）请见“特殊车次与补充号段”。' };
 }
 
 function lookupNumeric(code) {
+  /* 3 位：001–298 厂修客车回送 */
+  if (code.length === 3) {
+    const n = Number(code);
+    if (n >= 1 && n <= 298) {
+      const u = UNVERIFIED.numeric.find(x => x.pad === 3 && n >= x.from && n <= x.to);
+      if (u) {
+        const label = String(u.from).padStart(3, '0') + '–' + String(u.to).padStart(3, '0');
+        return {
+          status: 'ok', code: code, head: '（无字头）', read: '纯数字', cat: '回送列车',
+          group: 'w', batch: '未单列',
+          notes: u.desc, models: null, segs: [],
+          segObj: null, product: u.product, speed: u.speed, scope: u.scope, desc: u.desc,
+          segLabel: label, warn: '', unverified: true, passenger: u.passenger
+        };
+      }
+    }
+    return { status: 'invalid', msg: '3 位纯数字仅 001–298 为厂修客车回送，其余 1–4 位纯数字已不再用于旅客列车。请核对后重新输入。' };
+  }
+
   if (code.length === 5) {
     const n = Number(code);
+
+    /* 已核实优先 */
     const g = NUMERIC_GROUPS.find(x => n >= x.from && n <= x.to);
     if (g) {
       return {
@@ -1247,21 +1858,38 @@ function lookupNumeric(code) {
         segLabel: g.from + '–' + g.to, warn: ''
       };
     }
+
+    /* 未核实补充 */
+    const u = UNVERIFIED.numeric.find(x => !x.pad && n >= x.from && n <= x.to);
+    if (u) {
+      return {
+        status: 'ok', code: code, head: '（无字头）', read: '纯数字', cat: '特殊列车',
+        group: 'w', batch: '未单列',
+        notes: u.desc, models: null, segs: [],
+        segObj: null, product: u.product, speed: u.speed, scope: u.scope, desc: u.desc,
+        segLabel: u.from + '–' + u.to, warn: '',
+        unverified: true, passenger: u.passenger,
+        conflictNote: u.conflict ? '该号段与已核实货物号段有重叠，查询时已核实号段优先；此处为补充解读。' : ''
+      };
+    }
+
+    /* 路用兜底 */
     return {
       status: 'ok', code: code, head: '（无字头）', read: '纯数字', cat: '路用列车',
       group: 'w', batch: '未单列',
       notes: '轨道车、接触网作业车、大型养路机械、路内通勤列车、救援列车等路用列车车次为 5 位纯数字。',
       models: null, segs: [], segObj: null, product: '路用列车', speed: '按作业需要',
       scope: '线路检测、维修作业、应急救援等',
-      desc: '该车次未落在已知大宗直达货物号段内，按路用列车解读。路用列车通过数字号段细化区分类型。',
-      segLabel: '5 位纯数字', warn: ''
+      desc: '该车次未落在已知号段内，按路用列车解读。路用列车通过数字号段细化区分类型。',
+      segLabel: '5 位纯数字', warn: '', unverified: true
     };
   }
-  return { status: 'invalid', msg: '新版编排下，1–4 位纯数字车次已不再使用（原无字头普速旅客列车已改为 V 字头）。请核对后重新输入，例如 V6001、Z19、N301。' };
+
+  return { status: 'invalid', msg: '新版编排下，1–4 位纯数字车次已基本不再使用（原无字头普速旅客列车已改为 V 字头；001–298 为厂修客车回送）。请核对后重新输入，例如 V6001、Z19、N301。' };
 }
 
 /* =======================================================
-   三、渲染
+   四、渲染
    ======================================================= */
 function esc(s) {
   return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -1295,15 +1923,52 @@ function render(res) {
       res.models.map(m => '<span class="model-tag">' + esc(m) + '</span>').join('') + '</div></div>';
   }
 
+  const isU = !!res.unverified;
+  const cardCls = 'card' + (isU ? ' card-unverified' : '');
+
+  let tagsHtml =
+    '<span class="tag ' + groupClass(res.group) + '">' + esc(res.cat) + '</span>' +
+    '<span class="tag' + batchCls + '">' + esc(res.batch) + '变更</span>';
+
+  if (isU) {
+    tagsHtml += '<span class="tag u">未核实</span>';
+  }
+  if (res.isDeadhead) {
+    tagsHtml += '<span class="tag dead">空车回送 · 不载客</span>';
+  }
+
+  let deadheadNote = '';
+  if (res.isDeadhead) {
+    deadheadNote = '<div class="note note-u"><span class="ico" aria-hidden="true">i</span><span>' +
+      '<strong>' + esc(res.deadheadLabel) + '</strong>：' + esc(res.deadheadDesc) +
+      '</span></div>';
+  }
+
+  let conflictNote = '';
+  if (res.conflictNote) {
+    conflictNote = '<div class="note note-u"><span class="ico" aria-hidden="true">i</span><span>' + esc(res.conflictNote) + '</span></div>';
+  }
+
+  let passengerNote = '';
+  if (res.passenger === 'staff') {
+    passengerNote = '<div class="note note-u"><span class="ico" aria-hidden="true">i</span><span><strong>仅限内部职工</strong>：俗称“职工车”，不对外卖票。</span></div>';
+  } else if (res.passenger === true && res.unverified) {
+    passengerNote = '<div class="note note-u"><span class="ico" aria-hidden="true">i</span><span><strong>旧版可买票</strong>：该字头属于旧版临时旅客列车，新版已停用。</span></div>';
+  } else if (res.passenger === false && res.unverified) {
+    passengerNote = '<div class="note note-u"><span class="ico" aria-hidden="true">i</span><span><strong>不载客</strong>：该车次为作业、回送或特殊运输列车，普通旅客不能乘坐。</span></div>';
+  }
+
   box.innerHTML =
-    '<div class="card">' +
+    '<div class="' + cardCls + '">' +
       '<div class="card-top">' +
         '<span class="code">' + esc(res.code) + '</span>' +
         '<span class="read">读作「' + esc(res.read) + '」</span>' +
-        '<span class="tag ' + groupClass(res.group) + '">' + esc(res.cat) + '</span>' +
-        '<span class="tag' + batchCls + '">' + esc(res.batch) + '变更</span>' +
+        tagsHtml +
       '</div>' +
       (res.warn ? '<div class="warn"><span aria-hidden="true">⚠</span><span>' + esc(res.warn) + '</span></div>' : '') +
+      deadheadNote +
+      conflictNote +
+      passengerNote +
       '<div class="grid">' +
         '<div class="cell"><span class="k">用途 / 产品类别</span><span class="v">' + esc(res.product) + '</span></div>' +
         '<div class="cell"><span class="k">速度等级</span><span class="v">' + esc(res.speed) + '</span></div>' +
@@ -1318,9 +1983,9 @@ function render(res) {
 }
 
 /* =======================================================
-   四、交互
+   五、交互
    ======================================================= */
-const SAMPLE = ['G1', 'D27', 'Z19', 'V6001', 'Y1001', 'B2001', 'DH1', '71001', 'S1', 'C2001', 'DJ5'];
+const SAMPLE = ['G1', 'D27', 'Z19', '0G1', 'V6001', 'B2001', 'DH1', 'DJ5', '50001', '001'];
 
 function buildChips() {
   document.getElementById('chips').innerHTML = SAMPLE.map(c =>
@@ -1372,7 +2037,7 @@ document.getElementById('filter').addEventListener('click', function (e) {
 });
 
 /* =======================================================
-   五、主题切换
+   六、主题切换
    ======================================================= */
 (function () {
   const root = document.documentElement;

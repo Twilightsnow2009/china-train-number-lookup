@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="zh-CN" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- ============ 基础 SEO ============ -->
+<title>列车车次查询 | 新版车次编排速查 · G/T/K/D 字头含义与车型</title>
+<meta name="description" content="输入车次号即可查询新版列车车次的用途、运行范围、速度等级与可能车型。涵盖 X/G/T/K/D/C/S/Z/N/V/Y 旅客列车字头及 B/DH 货物列车字头，附字头速查表、两批切换时间与常见问题。">
+<meta name="keywords" content="列车车次查询,车次编排,新版车次,字头含义,G字头,T字头,K字头,D字头,动车组车型,列车车次编排规定,12306">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="车次编排查询">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://example.com/">
+
+<!-- ============ 主题色 / 图标 ============ -->
+<meta name="theme-color" content="#0a2340">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b6bcb'/%3E%3Cpath d='M9 22h14M10 22V10a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12M13 12h6M13 16h6' stroke='white' stroke-width='2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+
+<!-- ============ Open Graph / 社交分享 ============ -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="车次编排查询">
+<meta property="og:title" content="列车车次查询 | 新版车次编排速查">
+<meta property="og:description" content="输入车次号，一眼看懂用途、运行范围、速度等级与可能车型。涵盖全部新版字头与号段。">
+<meta property="og:url" content="https://example.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="列车车次查询 | 新版车次编排速查">
+<meta name="twitter:description" content="输入车次号，一眼看懂用途、运行范围、速度等级与可能车型。">
+
+<!-- ============ 结构化数据 ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "车次编排查询",
+  "alternateName": "列车车次查询",
+  "url": "https://example.com/",
+  "description": "新版列车车次编排查询工具，支持输入车次号查询字头含义、用途、运行范围、速度等级与可能车型。",
+  "inLanguage": "zh-CN",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://example.com/?code={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "列车车次查询工具",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "需要 JavaScript 支持",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+  "description": "输入车次号即可查询新版列车车次的用途、运行范围、速度等级与可能车型，涵盖旅客列车、货物列车与路用列车字头。",
+  "inLanguage": "zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "新版列车车次编排有哪些主要变化？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "字头重新分配：T、K 字头从普速改为高速动车组，普速特快与快速分别改为 N、V；新增 X 字头（更高速度复兴号）与 DH 字头（货运动车组）；G 字头专指 350 公里级复兴号；C、S 字头收窄适用范围。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "G、T、K 字头现在分别代表什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "G 读“高”，表示最高运行时速 350 公里的复兴号动车组；T 读“特”，表示最高运行时速 300 公里的动车组；K 读“快”，表示最高运行时速 200 至 250 公里的动车组。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么用旧车次查不到了？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "新旧车次分两批切换：11 月下旬普速与货运先行，12 月下旬高速与城际跟进。旧字母可能已赋予新含义，建议按新版车次查询，并在 12306 核对到发车站与时刻。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "如何判断一趟车可能使用的车型？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "本页按字头与速度等级列出可能车型，如 G 字头常见 CR400AF/BF 系列，T 字头常见 CRH380 系列，D 字头为 CR200J 动集，C/S 字头为 CRH6 及 CJ 系列。具体以实际配属为准。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "纯数字车次现在代表什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "1 至 4 位纯数字已不再用于旅客列车；5 位纯数字为大宗直达货物列车（71001–77998 重载、80001–84998 煤炭、85001–85998 石油）或路用列车。"
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "更好服务铁路高质量发展和人民群众美好出行（权威访谈）",
+  "description": "国铁集团有关部门负责同志就全国铁路列车车次编排改革答记者问，解读新旧车次变化、客货运输产品体系与服务保障。",
+  "datePublished": "2026-10-17",
+  "author": { "@type": "Organization", "name": "人民铁道报" },
+  "publisher": { "@type": "Organization", "name": "人民铁道报" },
+  "inLanguage": "zh-CN"
+}
+</script>
+
+<!-- ============ 防闪烁主题脚本 ============ -->
+<script>
+(function(){
+  try {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.setAttribute('data-theme','dark');
+    }
+  } catch(e) {}
+})();
+</script>
+
+<style>
+  :root{
+    color-scheme: light;
+    --ink:#0b2440;
+    --ink-2:#33506f;
+    --muted:#7186a0;
+    --line:#e2eaf3;
+    --line-2:#eef3f9;
+    --blue:#0b6bcb;
+    --blue-d:#0a4a8a;
+    --blue-l:#eaf3ff;
+    --blue-b:#d2e5ff;
+    --orange:#df5c26;
+    --orange-l:#fff1e8;
+    --orange-d:#b8431a;
+    --orange-b:#ffd8c4;
+    --gray-l:#eef1f5;
+    --gray-d:#4e6178;
+    --gray-b:#dfe5ee;
+    --bg:#f2f6fb;
+    --card:#fff;
+    --surface:#f8fafd;
+    --surface-2:#f2f6fb;
+    --r:18px;
+    --shadow:0 20px 44px -30px rgba(11,36,64,.55);
+    --shadow-hover:0 26px 50px -28px rgba(11,36,64,.42);
+  }
+
+  [data-theme="dark"]{
+    color-scheme: dark;
+    --ink:#e6edf5;
+    --ink-2:#b8c8da;
+    --muted:#8298b2;
+    --line:#263649;
+    --line-2:#1e2c3d;
+    --blue:#4da3ff;
+    --blue-d:#79bfff;
+    --blue-l:#152b45;
+    --blue-b:#24425f;
+    --orange:#ff8a5c;
+    --orange-l:#3d2115;
+    --orange-d:#ff9e73;
+    --orange-b:#5a3020;
+    --gray-l:#1e2a38;
+    --gray-d:#a9bccf;
+    --gray-b:#2f4054;
+    --bg:#0a121c;
+    --card:#141e2b;
+    --surface:#182433;
+    --surface-2:#1a2737;
+    --shadow:0 20px 44px -30px rgba(0,0,0,.85);
+    --shadow-hover:0 26px 50px -28px rgba(0,0,0,.72);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  body, .topbar, .search, .card, .cell, .desc, .note, .seg, .head-card,
+  .tl-card, .source-card, .point, .source-note, .fbtn, .model-tag, footer,
+  .read, .tag, .theme-btn, .faq-item {
+    transition: background-color .3s ease, border-color .3s ease, color .3s ease;
+  }
+
+  /* ================= 可访问性 ================= */
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+    overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+  }
+  .skip-link{
+    position:absolute;left:12px;top:-70px;z-index:100;
+    background:var(--card);color:var(--ink);
+    padding:10px 18px;border-radius:10px;box-shadow:var(--shadow);
+    text-decoration:none;font-weight:600;font-size:14px;
+    transition:top .2s ease;
+  }
+  .skip-link:focus{top:12px;}
+
+  /* ================= 顶栏 ================= */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    display:flex;align-items:center;gap:14px;
+    padding:0 24px;height:56px;
+    background:rgba(10,35,64,.86);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    color:#dcebff;
+    font-size:13.5px;
+  }
+  [data-theme="dark"] .topbar{background:rgba(6,14,24,.92);}
+
+  .topbar .brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.04em;color:#fff;}
+  .topbar .dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,#37a0ff,#12b0a0);box-shadow:0 0 12px rgba(55,160,255,.8);}
+
+  .topbar-right{margin-left:auto;display:flex;align-items:center;gap:22px;}
+  .topbar nav{display:flex;gap:22px;}
+  .topbar nav a{color:#a9c6e6;text-decoration:none;transition:color .15s;}
+  .topbar nav a:hover{color:#fff;}
+
+  .theme-btn{
+    display:flex;align-items:center;justify-content:center;
+    width:36px;height:36px;border-radius:10px;
+    border:1px solid rgba(255,255,255,.18);
+    background:rgba(255,255,255,.08);
+    color:#cfe4fb;cursor:pointer;
+    transition:background-color .18s, color .18s, border-color .18s, transform .12s;
+  }
+  .theme-btn:hover{background:rgba(255,255,255,.16);color:#fff;}
+  .theme-btn:active{transform:scale(.95);}
+  .theme-btn:focus-visible{outline:2px solid #79bfff;outline-offset:2px;}
+  .theme-ico{display:flex;}
+  .theme-ico.sun{display:none;}
+  [data-theme="dark"] .theme-ico.moon{display:none;}
+  [data-theme="dark"] .theme-ico.sun{display:flex;}
+
+  /* ================= Hero ================= */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:58px 20px 86px;
+    text-align:center;color:#fff;
+    background:
+      radial-gradient(1000px 480px at 50% -190px, rgba(40,130,215,.6), transparent 70%),
+      linear-gradient(165deg,#0a2340 0%,#0d3057 52%,#091f39 100%);
+  }
+  [data-theme="dark"] .hero{
+    background:
+      radial-gradient(1000px 480px at 50% -190px, rgba(30,100,170,.45), transparent 70%),
+      linear-gradient(165deg,#071626 0%,#0a2440 52%,#061320 100%);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:46px 46px;
+    mask-image:linear-gradient(to bottom, rgba(0,0,0,.85), transparent 85%);
+    -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.85), transparent 85%);
+  }
+  .hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+    background:linear-gradient(90deg,#0b6bcb,#12b0a0,#e8622c);
+  }
+  .hero-inner{position:relative;z-index:2;max-width:840px;margin:0 auto;}
+  .kicker{
+    display:inline-block;font-size:12px;letter-spacing:.16em;
+    padding:6px 15px;border-radius:999px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    color:#c7e0ff;margin-bottom:20px;
+  }
+  .hero h1{
+    margin:0 0 10px;font-weight:800;letter-spacing:.01em;
+    font-size:clamp(27px,5vw,42px);
+  }
+  .hero .sub{margin:0 0 32px;color:#b3cdea;font-size:clamp(14px,2.4vw,16px);}
+  .hero .sub b{color:#fff;font-weight:600;}
+
+  .search{
+    display:flex;gap:8px;max-width:620px;margin:0 auto;
+    background:var(--card);padding:8px;border-radius:20px;
+    box-shadow:0 30px 60px -28px rgba(0,0,0,.85), 0 0 0 1px rgba(255,255,255,.07);
+  }
+  .search input{
+    flex:1;min-width:0;border:0;outline:0;background:transparent;
+    font-size:17px;padding:14px 18px;color:var(--ink);
+    font-family:inherit;letter-spacing:.08em;
+  }
+  .search input::placeholder{color:#9db0c8;letter-spacing:0;font-size:14.5px;}
+  [data-theme="dark"] .search input::placeholder{color:#6b8099;}
+  .search button{
+    border:0;cursor:pointer;font-family:inherit;
+    background:linear-gradient(135deg,#0b6bcb,#0a4a8a);
+    color:#fff;font-size:15.5px;font-weight:700;letter-spacing:.16em;
+    padding:0 32px;border-radius:14px;
+    box-shadow:0 10px 20px -10px rgba(11,107,203,.95);
+    transition:filter .18s, transform .12s;
+  }
+  .search button:hover{filter:brightness(1.08);}
+  .search button:active{transform:translateY(1px) scale(.99);}
+
+  .chips{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+  .chip{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;letter-spacing:.05em;
+    padding:5px 13px;border-radius:999px;cursor:pointer;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.22);
+    color:#cfe4fb;transition:all .15s;
+  }
+  .chip:hover{background:#fff;color:#0a2340;border-color:#fff;}
+
+  /* ================= 主体 ================= */
+  main{max-width:960px;margin:0 auto;padding:0 20px 90px;}
+  .result{margin-top:-38px;position:relative;z-index:5;}
+  .result:empty{display:none;}
+
+  .intro{
+    margin:46px 0 0;
+    padding:18px 22px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    font-size:14px;
+    color:var(--ink-2);
+    box-shadow:var(--shadow);
+  }
+  .intro strong{color:var(--ink);}
+
+  /* ---------- 结果卡片 ---------- */
+  .card{
+    background:var(--card);border-radius:var(--r);
+    box-shadow:var(--shadow), 0 0 0 1px var(--line);
+    padding:26px 28px 24px;
+    animation:pop .3s cubic-bezier(.22,1,.36,1);
+  }
+  @keyframes pop{from{opacity:0;transform:translateY(12px) scale(.99);}to{opacity:1;transform:none;}}
+
+  .card-top{
+    display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+    padding-bottom:18px;margin-bottom:20px;
+    border-bottom:1px dashed var(--line);
+  }
+  .code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:38px;font-weight:800;line-height:1;letter-spacing:.03em;
+  }
+  .read{
+    font-size:13px;font-weight:600;color:var(--blue-d);
+    background:var(--blue-l);border:1px solid var(--blue-b);
+    padding:4px 12px;border-radius:999px;
+  }
+  .tag{
+    font-size:12.5px;font-weight:700;letter-spacing:.04em;
+    padding:5px 13px;border-radius:999px;white-space:nowrap;
+  }
+  .tag.p{background:var(--blue-l);color:var(--blue-d);border:1px solid var(--blue-b);}
+  .tag.f{background:var(--orange-l);color:var(--orange-d);border:1px solid var(--orange-b);}
+  .tag.w{background:var(--gray-l);color:var(--gray-d);border:1px solid var(--gray-b);}
+  .tag.batch{background:var(--surface-2);color:var(--muted);border:1px dashed var(--line);font-weight:600;}
+  .tag.batch.on{background:#eefaf3;color:#127a48;border:1px solid #c7eed8;}
+  [data-theme="dark"] .tag.batch.on{background:#12301f;color:#62d494;border-color:#1d5236;}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px;}
+  .cell{
+    background:var(--surface);border:1px solid var(--line-2);
+    border-radius:13px;padding:13px 16px;
+    display:flex;flex-direction:column;gap:3px;
+  }
+  .cell.wide{grid-column:1/-1;}
+  .cell .k{font-size:11.5px;color:var(--muted);letter-spacing:.1em;}
+  .cell .v{font-size:15px;font-weight:650;color:var(--ink);}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.04em;}
+
+  .models{margin:0 0 18px;}
+  .models-title{
+    font-size:11.5px;letter-spacing:.14em;color:var(--muted);
+    margin:0 0 10px;display:flex;align-items:center;gap:8px;
+  }
+  .models-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);}
+  .model-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .model-tag{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;letter-spacing:.02em;
+    padding:5px 12px;border-radius:9px;
+    background:var(--surface);border:1px solid var(--line);
+    color:var(--ink-2);transition:all .15s;white-space:nowrap;
+  }
+  .model-tag:hover{
+    background:var(--blue-l);border-color:var(--blue-b);color:var(--blue-d);
+    transform:translateY(-1px);
+  }
+
+  .desc{
+    margin:0 0 16px;font-size:14.5px;color:var(--ink-2);
+    background:var(--surface);border-left:3px solid var(--blue);
+    padding:13px 16px;border-radius:0 11px 11px 0;
+  }
+  .note{
+    display:flex;gap:9px;align-items:flex-start;
+    font-size:13.5px;color:var(--ink-2);
+    background:var(--surface);border:1px solid var(--line-2);
+    border-radius:11px;padding:11px 14px;margin-bottom:18px;
+  }
+  .note .ico{
+    flex:0 0 auto;width:18px;height:18px;border-radius:50%;
+    background:var(--surface-2);color:var(--blue-d);
+    font-size:11px;font-weight:800;
+    display:flex;align-items:center;justify-content:center;margin-top:2px;
+  }
+  [data-theme="dark"] .note .ico{background:#1a2e46;color:#79bfff;}
+  .warn{
+    display:flex;gap:10px;
+    background:#fff8e6;border:1px solid #ffe2a0;color:#8a5a00;
+    padding:11px 15px;border-radius:12px;font-size:13.5px;margin-bottom:18px;
+  }
+  [data-theme="dark"] .warn{background:#352a12;border-color:#57441a;color:#e8c06a;}
+
+  .seg-title{font-size:11.5px;letter-spacing:.12em;color:var(--muted);margin:0 0 10px;}
+  .seg-list{
+    list-style:none;margin:0;padding:0;
+    display:flex;flex-direction:column;gap:6px;
+    max-height:290px;overflow:auto;
+  }
+  .seg-list::-webkit-scrollbar{width:6px;}
+  .seg-list::-webkit-scrollbar-thumb{background:#dbe5f0;border-radius:99px;}
+  [data-theme="dark"] .seg-list::-webkit-scrollbar-thumb{background:#2a3a4d;}
+  .seg{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;
+    padding:9px 14px;border-radius:11px;font-size:13.5px;
+    color:var(--ink-2);background:var(--surface);border:1px solid transparent;
+  }
+  .seg.active{
+    background:linear-gradient(90deg,#eaf3ff,#f7fbff);
+    border-color:var(--blue-b);color:var(--ink);font-weight:600;
+    box-shadow:inset 3px 0 0 var(--blue);
+  }
+  [data-theme="dark"] .seg.active{
+    background:linear-gradient(90deg,#172b42,#152639);
+    border-color:#2a4a6e;
+  }
+  .seg-range{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;color:var(--blue-d);min-width:136px;letter-spacing:.03em;
+  }
+  .seg.active .seg-range{color:var(--blue);}
+  .seg-name{flex:1;min-width:150px;}
+
+  .card-error{display:flex;gap:16px;align-items:flex-start;border-top:4px solid #ffb020;}
+  .err-icon{
+    flex:0 0 auto;width:34px;height:34px;border-radius:50%;
+    background:#fff4e0;color:#b26a00;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:18px;
+  }
+  [data-theme="dark"] .err-icon{background:#3a2c14;color:#f0b84a;}
+  .card-error p{margin:0;font-size:14.5px;color:var(--ink-2);padding-top:4px;}
+
+  /* ================= 实施时间线 ================= */
+  .timeline{margin-top:46px;}
+  .sec-head{margin-bottom:18px;}
+  .sec-head h2{margin:0 0 5px;font-size:19px;letter-spacing:.02em;}
+  .sec-head p{margin:0;font-size:13.5px;color:var(--muted);}
+  .tl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .tl-card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;box-shadow:var(--shadow);
+    position:relative;overflow:hidden;
+  }
+  .tl-card::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+    background:linear-gradient(180deg,#0b6bcb,#12b0a0);
+  }
+  .tl-card.second::before{background:linear-gradient(180deg,#e8622c,#d2a01e);}
+  .tl-when{
+    display:flex;align-items:center;gap:9px;
+    font-size:12.5px;color:var(--muted);margin-bottom:8px;letter-spacing:.06em;
+  }
+  .tl-when b{font-size:16px;color:var(--ink);letter-spacing:0;font-weight:800;}
+  .tl-body{font-size:13.5px;color:var(--ink-2);}
+  .tl-body code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;background:var(--surface-2);border:1px solid var(--line);
+    border-radius:6px;padding:1px 6px;color:var(--blue-d);white-space:nowrap;
+  }
+  .tl-card.second .tl-body code{color:var(--orange-d);background:var(--orange-l);border-color:var(--orange-b);}
+  [data-theme="dark"] .tl-card.second .tl-body code{background:#2a1e14;border-color:#4a3020;color:#ff9e73;}
+
+  /* ================= 速查表 ================= */
+  .rules{margin-top:56px;}
+  .filter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;}
+  .fbtn{
+    font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;
+    padding:7px 17px;border-radius:999px;
+    background:var(--card);color:var(--ink-2);
+    border:1px solid var(--line);
+    transition:all .16s;
+  }
+  .fbtn:hover{border-color:var(--blue-b);color:var(--blue-d);}
+  .fbtn.active{
+    background:linear-gradient(135deg,#0b6bcb,#0a4a8a);
+    color:#fff;border-color:transparent;
+    box-shadow:0 10px 20px -14px rgba(11,107,203,.95);
+  }
+
+  .head-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));gap:14px;}
+  .head-card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:17px 18px;display:flex;gap:14px;
+    transition:box-shadow .2s, transform .2s, border-color .3s, background-color .3s;
+  }
+  .head-card:hover{
+    box-shadow:var(--shadow-hover);transform:translateY(-2px);border-color:var(--blue-b);
+  }
+  .head-card.hidden{display:none;}
+  .head-badge{
+    flex:0 0 auto;width:50px;height:50px;border-radius:13px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-weight:800;font-size:17px;color:#fff;letter-spacing:.02em;
+    background:linear-gradient(135deg,#0b6bcb,#0a4a8a);
+    box-shadow:0 10px 18px -12px rgba(11,107,203,.9);
+  }
+  .head-card.f .head-badge{background:linear-gradient(135deg,#e8622c,#c2451a);box-shadow:0 10px 18px -12px rgba(232,98,44,.9);}
+  .head-card.w .head-badge{background:linear-gradient(135deg,#6b7c93,#46586d);box-shadow:0 10px 18px -12px rgba(107,124,147,.9);}
+  .head-body{flex:1;min-width:0;}
+  .head-title{font-size:13.5px;font-weight:700;margin-bottom:2px;}
+  .head-title span{font-weight:500;color:var(--muted);font-size:12.5px;}
+  .head-cat{font-size:11.5px;color:var(--muted);margin-bottom:9px;letter-spacing:.04em;}
+  .head-segs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:12.5px;color:var(--ink-2);}
+  .head-segs b{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    color:var(--blue-d);font-weight:700;
+  }
+  .head-card.f .head-segs b{color:var(--orange-d);}
+  .head-card.w .head-segs b{color:var(--gray-d);}
+
+  /* ================= 常见问答 ================= */
+  .faq{margin-top:60px;}
+  .faq-list{display:flex;flex-direction:column;gap:12px;margin:0;padding:0;}
+  .faq-item{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 22px;box-shadow:var(--shadow);
+  }
+  .faq-item dt{
+    font-size:14.5px;font-weight:700;color:var(--ink);
+    margin-bottom:8px;line-height:1.5;
+  }
+  .faq-item dd{
+    margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.7;
+  }
+  .faq-item dd code{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12.5px;background:var(--surface-2);border:1px solid var(--line);
+    border-radius:5px;padding:1px 6px;color:var(--blue-d);
+  }
+
+  /* ================= 引用文章 ================= */
+  .source{margin-top:60px;}
+  .source-card{
+    position:relative;overflow:hidden;
+    background:var(--card);border:1px solid var(--line);border-radius:22px;
+    padding:34px 36px 30px;
+    box-shadow:var(--shadow);
+  }
+  .source-card::before{
+    content:"“";
+    position:absolute;right:26px;top:-26px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:150px;line-height:1;color:#eff5fc;pointer-events:none;
+  }
+  [data-theme="dark"] .source-card::before{color:#1a2637;}
+  .source-label{
+    display:inline-block;font-size:11.5px;letter-spacing:.18em;
+    color:var(--blue-d);background:var(--blue-l);
+    border:1px solid var(--blue-b);border-radius:999px;
+    padding:4px 13px;margin-bottom:16px;font-weight:700;
+  }
+  .source-card h2{
+    position:relative;margin:0 0 6px;
+    font-size:clamp(18px,2.8vw,22px);line-height:1.45;letter-spacing:.01em;
+  }
+  .source-sub{
+    position:relative;margin:0 0 16px;
+    font-size:14px;color:var(--ink-2);
+  }
+  .source-meta{
+    position:relative;display:flex;flex-wrap:wrap;gap:8px 18px;
+    font-size:12.5px;color:var(--muted);
+    padding-bottom:18px;margin-bottom:18px;
+    border-bottom:1px dashed var(--line);
+  }
+  .source-meta span{display:flex;align-items:center;gap:6px;}
+  .source-meta span::before{
+    content:"";width:5px;height:5px;border-radius:50%;background:#bcd0e6;
+  }
+  [data-theme="dark"] .source-meta span::before{background:#3a4d63;}
+  .source-meta span:first-child::before{background:var(--blue);}
+
+  .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:20px;}
+  .point{
+    background:var(--surface);border:1px solid var(--line-2);
+    border-radius:13px;padding:14px 16px;
+  }
+  .point .pk{font-size:11.5px;letter-spacing:.14em;color:var(--muted);margin-bottom:5px;}
+  .point .pv{font-size:13.5px;font-weight:650;color:var(--ink);margin-bottom:3px;}
+  .point .pd{font-size:12.5px;color:var(--muted);line-height:1.6;}
+
+  .source-note{
+    position:relative;margin:0;font-size:13px;color:var(--muted);
+    background:var(--surface);border-left:3px solid #cfe0f2;
+    border-radius:0 10px 10px 0;padding:12px 16px;
+  }
+  [data-theme="dark"] .source-note{border-left-color:#2a4a6e;}
+
+  /* ================= 页脚 ================= */
+  footer{
+    text-align:center;padding:28px 20px 40px;
+    font-size:12.5px;color:var(--muted);
+    background:var(--card);border-top:1px solid var(--line);
+  }
+  footer b{color:var(--ink-2);font-weight:600;}
+  footer .footer-links{margin-top:8px;}
+  footer .footer-links a{color:var(--muted);text-decoration:none;margin:0 6px;}
+  footer .footer-links a:hover{color:var(--blue);}
+
+  /* ================= 响应式 ================= */
+  @media (max-width:720px){
+    .topbar{padding:0 16px;}
+    .topbar nav{display:none;}
+    .hero{padding:44px 16px 74px;}
+    .search{flex-direction:column;padding:10px;border-radius:18px;}
+    .search input{padding:13px 12px;text-align:center;font-size:18px;letter-spacing:.1em;}
+    .search button{padding:13px;letter-spacing:.24em;}
+    .card{padding:20px 18px;}
+    .code{font-size:31px;}
+    .grid{grid-template-columns:1fr;}
+    .cell.wide{grid-column:auto;}
+    .tl-grid{grid-template-columns:1fr;}
+    .seg-range{min-width:100%;}
+    .source-card{padding:26px 22px 24px;}
+    .source-card::before{font-size:110px;right:14px;top:-16px;}
+    .head-grid{grid-template-columns:1fr;}
+    .intro{padding:16px 18px;font-size:13.5px;}
+    .faq-item{padding:16px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<!-- ================= 顶栏 ================= -->
+<header class="topbar">
+  <div class="brand"><span class="dot" aria-hidden="true"></span>车次编排查询</div>
+  <div class="topbar-right">
+    <nav aria-label="页面导航">
+      <a href="#rules">字头速查</a>
+      <a href="#faq">常见问答</a>
+      <a href="#source">编排依据</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" type="button"
+            aria-label="切换深色/浅色模式" title="切换深色模式">
+      <span class="theme-ico moon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+      </span>
+      <span class="theme-ico sun" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= 首屏 ================= -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div class="kicker">新版《列车车次编排规定》 · 2026</div>
+    <h1 id="hero-title">列车车次查询</h1>
+    <p class="sub">输入车次号，一眼看懂这趟车的 <b>用途</b>、<b>运行范围</b>、<b>可能车型</b> 与 <b>实施批次</b></p>
+
+    <form class="search" id="form" autocomplete="off" role="search">
+      <label class="sr-only" for="input">输入要查询的列车车次，例如 G1、D27、Z19</label>
+      <input id="input" type="text" maxlength="10" name="code"
+             placeholder="如 G1、D27、Z19、V6001、B2001、DH1、71001"
+             aria-label="输入列车车次查询">
+      <button type="submit">查 询</button>
+    </form>
+
+    <div class="chips" id="chips" aria-label="示例车次快速查询"></div>
+  </div>
+</section>
+
+<main id="main">
+
+  <!-- 查询结果 -->
+  <section class="result" id="result" aria-live="polite" aria-atomic="true" aria-label="查询结果"></section>
+
+  <!-- 工具说明 -->
+  <section class="intro" aria-label="工具说明">
+    <p style="margin:0;">
+      <strong>列车车次查询</strong>是一个依据 2026 年新版《列车车次编排规定》整理的静态查询工具。
+      输入任意车次号，即可查看该车次的<strong>用途 / 产品类别</strong>、<strong>速度等级</strong>、
+      <strong>运行范围</strong>与<strong>可能车型</strong>。新版车次按旅客列车、货物列车、路用列车分类，
+      构建了“分类清晰、层次分明、直观易记”的编码体系；新旧车次分两批切换，
+      第一批为普速与货运，第二批为高速与城际。
+    </p>
+  </section>
+
+  <!-- 两批实施时间线 -->
+  <section class="timeline" aria-labelledby="tl-title">
+    <div class="sec-head">
+      <h2 id="tl-title">新旧车次分两批切换</h2>
+      <p>按照“同一时间、同一字母仅表达一种含义”的原则安排，防止新旧含义叠加</p>
+    </div>
+    <div class="tl-grid">
+      <div class="tl-card">
+        <div class="tl-when">第一批 · <b>11 月下旬</b> 普速与货运</div>
+        <div class="tl-body">
+          普速旅客列车、旅游列车、货物列车等先行变更：<code>T→N</code>
+          <code>K→V</code> <code>X→B</code>，同步调整 <code>Z</code> 字头部分号段与读音、
+          <code>Y</code> 字头部分号段。
+        </div>
+      </div>
+      <div class="tl-card second">
+        <div class="tl-when">第二批 · <b>12 月下旬</b> 高速与城际</div>
+        <div class="tl-body">
+          高速旅客列车、动集、城际、市郊（域）旅客列车、动车组快运列车陆续组织开行
+          <code>G</code> <code>T</code> <code>K</code> <code>D</code> <code>C</code>
+          <code>S</code> <code>DH</code> 字头列车。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 字头速查表（静态 HTML，便于搜索引擎抓取） -->
+  <section class="rules" id="rules" aria-labelledby="rules-title">
+    <div class="sec-head">
+      <h2 id="rules-title">字头速查表</h2>
+      <p>按旅客列车、货物列车、路用列车分类，构建“分类清晰、层次分明、直观易记”的车次编码体系</p>
+    </div>
+
+    <div class="filter" id="filter" role="group" aria-label="按列车类别筛选字头">
+      <button class="fbtn active" data-g="all" type="button">全部</button>
+      <button class="fbtn" data-g="p" type="button">旅客列车</button>
+      <button class="fbtn" data-g="f" type="button">货物列车</button>
+      <button class="fbtn" data-g="w" type="button">路用列车</button>
+    </div>
+
+    <div class="head-grid" id="headGrid">
+
+      <!-- X -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">X</div>
+        <div class="head-body">
+          <div class="head-title">读作「新」</div>
+          <div class="head-cat">高速旅客列车 · 第二批</div>
+          <ul class="head-segs">
+            <li><b>X1–X9998</b> 复兴号动车组列车（新时速）</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- G -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">G</div>
+        <div class="head-body">
+          <div class="head-title">读作「高」</div>
+          <div class="head-cat">高速旅客列车 · 第二批</div>
+          <ul class="head-segs">
+            <li><b>G1–G9998</b> 复兴号动车组列车</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- T -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">T</div>
+        <div class="head-body">
+          <div class="head-title">读作「特」</div>
+          <div class="head-cat">高速旅客列车 · 第二批</div>
+          <ul class="head-segs">
+            <li><b>T1–T9998</b> 动车组列车（300 公里级）</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- K -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">K</div>
+        <div class="head-body">
+          <div class="head-title">读作「快」</div>
+          <div class="head-cat">高速旅客列车 · 第二批</div>
+          <ul class="head-segs">
+            <li><b>K1–K9998</b> 动车组列车（200–250 公里级）</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- D -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">D</div>
+        <div class="head-body">
+          <div class="head-title">读作「动」</div>
+          <div class="head-cat">动集旅客列车 · 第二批</div>
+          <ul class="head-segs">
+            <li><b>D1–D9998</b> 动力集中动车组列车</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">C</div>
+        <div class="head-body">
+          <div class="head-title">读作「城」</div>
+          <div class="head-cat">城际旅客列车 · 第二批</div>
+          <ul class="head-segs">
+            <li><b>C1–C2998</b> 城际铁路动车组列车</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- S -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">S</div>
+        <div class="head-body">
+          <div class="head-title">读作「市郊」</div>
+          <div class="head-cat">市郊（域）旅客列车 · 第二批</div>
+          <ul class="head-segs">
+            <li><b>S1–S2998</b> 市郊（域）旅客列车</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Z -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">Z</div>
+        <div class="head-body">
+          <div class="head-title">读作「英文字母 Z」</div>
+          <div class="head-cat">普速旅客列车 · 第一批</div>
+          <ul class="head-segs">
+            <li><b>Z1–Z1998</b> 快速旅客列车（直达特快）</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- N -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">N</div>
+        <div class="head-body">
+          <div class="head-title">读作「英文字母 N」</div>
+          <div class="head-cat">普速旅客列车 · 第一批</div>
+          <ul class="head-segs">
+            <li><b>N1–N1998</b> 快速旅客列车</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- V -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">V</div>
+        <div class="head-body">
+          <div class="head-title">读作「英文字母 V」</div>
+          <div class="head-cat">普速旅客列车 · 第一批</div>
+          <ul class="head-segs">
+            <li><b>V1–V5998</b> 快速旅客列车</li>
+            <li><b>V6001–V6998</b> 普通旅客快车</li>
+            <li><b>V7001–V7998</b> 普通旅客慢车</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Y -->
+      <div class="head-card p" data-g="p">
+        <div class="head-badge" aria-hidden="true">Y</div>
+        <div class="head-body">
+          <div class="head-title">读作「游」</div>
+          <div class="head-cat">普速旅游列车 · 第一批</div>
+          <ul class="head-segs">
+            <li><b>Y1–Y998</b> 普速旅游专线列车</li>
+            <li><b>Y1001–Y9998</b> 普速旅游专列</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="head-card f" data-g="f">
+        <div class="head-badge" aria-hidden="true">B</div>
+        <div class="head-body">
+          <div class="head-title">读作「班」</div>
+          <div class="head-cat">货物列车 · 第一批</div>
+          <ul class="head-segs">
+            <li><b>B1–B198</b> 特快城际班列</li>
+            <li><b>B201–B998</b> 快速多式联运 / 快捷物流班列</li>
+            <li><b>B1001–B1998</b> 快速城际班列</li>
+            <li><b>B2001–B3998</b> 快速中欧 / 中亚班列</li>
+            <li><b>B4001–B9998</b> 普快班列系列</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DH -->
+      <div class="head-card f" data-g="f">
+        <div class="head-badge" aria-hidden="true">DH</div>
+        <div class="head-body">
+          <div class="head-title">读作「动货」</div>
+          <div class="head-cat">货物列车 · 第二批</div>
+          <ul class="head-segs">
+            <li><b>DH1–DH998</b> 动车组快运列车（250 公里以上）</li>
+            <li><b>DH1001–DH1998</b> 动车组快运列车（250 公里及以下）</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DJ -->
+      <div class="head-card w" data-g="w">
+        <div class="head-badge" aria-hidden="true">DJ</div>
+        <div class="head-body">
+          <div class="head-title">读作「动检」</div>
+          <div class="head-cat">路用列车 · 未单列</div>
+          <ul class="head-segs">
+            <li><b>DJ＋1~5 位数字</b> 动车组检测、确认列车</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 5 位纯数字 -->
+      <div class="head-card f" data-g="f">
+        <div class="head-badge" aria-hidden="true">5位</div>
+        <div class="head-body">
+          <div class="head-title">纯数字车次</div>
+          <div class="head-cat">大宗直达货物列车 / 路用列车 · 第一批</div>
+          <ul class="head-segs">
+            <li><b>71001–77998</b> 重载货物列车</li>
+            <li><b>80001–84998</b> 煤炭直达列车</li>
+            <li><b>85001–85998</b> 石油直达列车</li>
+            <li><b>其他 5 位</b> 轨道车、作业车、救援列车等路用列车</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 常见问答 -->
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="sec-head">
+      <h2 id="faq-title">常见问题</h2>
+      <p>关于新版车次编排，你可能还想了解</p>
+    </div>
+    <dl class="faq-list">
+      <div class="faq-item">
+        <dt>新版列车车次编排有哪些主要变化？</dt>
+        <dd>字头重新分配：<code>T</code>、<code>K</code> 字头从普速改为高速动车组，普速特快与快速分别改为 <code>N</code>、<code>V</code>；新增 <code>X</code> 字头（更高速度复兴号）与 <code>DH</code> 字头（货运动车组）；<code>G</code> 字头专指 350 公里级复兴号；<code>C</code>、<code>S</code> 字头收窄适用范围。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>G、T、K 字头现在分别代表什么？</dt>
+        <dd><code>G</code> 读“高”，表示最高运行时速 350 公里的复兴号动车组；<code>T</code> 读“特”，表示最高运行时速 300 公里的动车组；<code>K</code> 读“快”，表示最高运行时速 200 至 250 公里的动车组。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>为什么用旧车次查不到了？</dt>
+        <dd>新旧车次分两批切换：11 月下旬普速与货运先行，12 月下旬高速与城际跟进。旧字母可能已赋予新含义，建议按新版车次查询，并在 12306 核对到发车站与时刻。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>如何判断一趟车可能使用的车型？</dt>
+        <dd>本页按字头与速度等级列出可能车型，如 <code>G</code> 字头常见 CR400AF/BF 系列，<code>T</code> 字头常见 CRH380 系列，<code>D</code> 字头为 CR200J 动集，<code>C</code>/<code>S</code> 字头为 CRH6 及 CJ 系列。具体以实际配属为准。</dd>
+      </div>
+      <div class="faq-item">
+        <dt>纯数字车次现在代表什么？</dt>
+        <dd>1 至 4 位纯数字已不再用于旅客列车；5 位纯数字为大宗直达货物列车（71001–77998 重载、80001–84998 煤炭、85001–85998 石油）或路用列车。</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- 引用文章 -->
+  <section class="source" id="source" aria-labelledby="source-title">
+    <article class="source-card">
+      <span class="source-label">编排依据</span>
+      <h2 id="source-title">更好服务铁路高质量发展和人民群众美好出行（权威访谈）</h2>
+      <p class="source-sub">——国铁集团有关部门负责同志就全国铁路列车车次编排改革答记者问</p>
+
+      <div class="source-meta">
+        <span>人民铁道报</span>
+        <span><time datetime="2026-10-17">2026 年 10 月 17 日</time></span>
+        <span>本报记者 宋佳伶　实习记者 王昕</span>
+      </div>
+
+      <div class="points">
+        <div class="point">
+          <div class="pk">关键词 · 目的</div>
+          <div class="pv">以需定编，精准匹配多元产品</div>
+          <div class="pd">2014 年以来路网规模扩大 47.6%、旅客列车开行量增长 141%，旧号段已近饱和。</div>
+        </div>
+        <div class="point">
+          <div class="pk">关键词 · 变化</div>
+          <div class="pv">重构编码，一看车次便知产品</div>
+          <div class="pd">旅客列车按速度等级与产品类别细分，货物列车细化物流产品号段。</div>
+        </div>
+        <div class="point">
+          <div class="pk">关键词 · 服务保障</div>
+          <div class="pv">全链护航，平稳切换安全有序</div>
+          <div class="pd">12306、95306 系统同步升级，购票与在途服务保持稳定。</div>
+        </div>
+      </div>
+
+      <p class="source-note">
+        本页所有字头含义、号段范围、速度等级与实施批次，均依据该访谈所述新版《列车车次编排规定》整理；
+        车型为按速度等级与产品类别推测的可能范围，具体以铁路 12306、95306 及车站公告为准。
+      </p>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <b>车次编排查询</b> · 静态演示页面 · 数据依据 2026 年新版《列车车次编排规定》<br>
+  出行前请核对列车车次、到发车站与运行时刻，以免误购误乘
+  <div class="footer-links">
+    <a href="#rules">字头速查</a> ·
+    <a href="#faq">常见问答</a> ·
+    <a href="#source">编排依据</a>
+  </div>
+</footer>
+
+<script>
+/* =======================================================
+   一、字头规则数据（用于查询解析）
+   ======================================================= */
+const HEADS = {
+  X: {
+    read: '新', cat: '高速旅客列车', group: 'p', batch: '第二批',
+    models: ['CR450AF', 'CR450BF', 'CR450 系列（研制/试验中）'],
+    notes: '新增字头，为新一代更高速度等级动车组预留，旧版无对应车次。',
+    segs: [{ from: 1, to: 9998, product: '复兴号动车组列车（新时速）', speed: '最高运行时速 350 公里以上', scope: '跨局、管内高速铁路',
+      desc: '“X”读“新”，寓意“新时速、新产品”，是考虑到新一代动车组列车未来投用而新增的字头。' }]
+  },
+  G: {
+    read: '高', cat: '高速旅客列车', group: 'p', batch: '第二批',
+    models: ['CR400AF', 'CR400BF', 'CR400AF-Z / BF-Z（智能型）', 'CR400AF-S / BF-S（智能提升型）', 'CR400AF-A / BF-A（16 辆长编组）', 'CR400AF-B / BF-B（17 辆超长编组）', 'CR400AF-G / BF-G（高寒型）', 'CR400AF-C / BF-C（京雄智能型）'],
+    notes: '新版 G 仅表示 350 公里级复兴号；旧版 G、D 中的 300 公里级、200–250 公里级高速产品已分别改用 T、K 字头。',
+    segs: [{ from: 1, to: 9998, product: '复兴号动车组列车', speed: '最高运行时速 350 公里', scope: '跨局、管内高速铁路',
+      desc: '“G”读“高”，表示最高运行时速 350 公里的复兴号动车组列车，是“1、2、3 小时高铁出行圈”的主力产品。' }]
+  },
+  T: {
+    read: '特', cat: '高速旅客列车', group: 'p', batch: '第二批',
+    models: ['CRH380A / CRH380AL', 'CRH380B / CRH380BL / CRH380BG', 'CRH380D', 'CRH380CL', 'CRH2C'],
+    notes: '旧版 T 为特快普速旅客列车，已改为 N 字头；新版 T 表示 300 公里级动车组，同一字母含义已变更。',
+    segs: [{ from: 1, to: 9998, product: '动车组列车（300 公里级）', speed: '最高运行时速 300 公里', scope: '跨局、管内高速铁路',
+      desc: '“T”读“特”，表示最高运行时速 300 公里的动车组列车，高速旅客列车产品的区分更细致。' }]
+  },
+  K: {
+    read: '快', cat: '高速旅客列车', group: 'p', batch: '第二批',
+    models: ['CR300AF / CR300BF', 'CRH2A / CRH2B / CRH2E', 'CRH1A / CRH1B / CRH1E', 'CRH5A / CRH5G / CRH5E', 'CRH3A', 'CRH6A（部分线路）'],
+    notes: '旧版 K 为快速普速旅客列车，已改为 V 字头；新版 K 表示 200–250 公里级动车组。',
+    segs: [{ from: 1, to: 9998, product: '动车组列车（200–250 公里级）', speed: '最高运行时速 200（含）至 250（含）公里', scope: '跨局、管内高速铁路',
+      desc: '“K”读“快”，表示最高运行时速 200（含）至 250（含）公里的动车组列车，多用于城际间中短途高速产品。' }]
+  },
+  D: {
+    read: '动', cat: '动集旅客列车', group: 'p', batch: '第二批',
+    models: ['CR200J', 'CR200J-A / -B / -C', 'CR200J-D / -G', 'CR200J 系列（动力集中型复兴号）'],
+    notes: 'D 字头保留为动力集中型动车组专属；旧版 D 中的高速动车组产品已按速度改入 G、T、K。',
+    segs: [{ from: 1, to: 9998, product: '动力集中动车组列车', speed: '最高运行时速 200 公里及以下', scope: '跨局、管内（高速铁路及既有线）',
+      desc: '“D”读“动”，为动力集中型动车组列车的专属字头，字头保持不变，部分列车数字号段有所调整。' }]
+  },
+  C: {
+    read: '城', cat: '城际旅客列车', group: 'p', batch: '第二批',
+    models: ['CRH6A / CRH6F', 'CRH6A-A / CRH6F-A', 'CJ1 / CJ2 / CJ3 / CJ5 / CJ6', 'CR200J（部分城际线路）'],
+    notes: 'C 字头收窄为 200 公里及以下管内城际；原 200 公里以上城际列车改用 G、T、K 字头。',
+    segs: [{ from: 1, to: 2998, product: '城际铁路动车组列车', speed: '最高运行时速 200 公里及以下', scope: '铁路局集团公司管内城际铁路',
+      desc: '“C”读“城”，专用于最高运行时速 200 公里及以下的管内城际铁路动车组列车。' }]
+  },
+  S: {
+    read: '市郊', cat: '市郊（域）旅客列车', group: 'p', batch: '第二批',
+    models: ['CRH6A / CRH6F', 'CRH6S', 'CRH6A-A / CRH6F-A', '市域动车组'],
+    notes: 'S 字头限定为市域内 160 公里及以下；原 160 公里以上市郊列车按速度等级改用 T、K、C。',
+    segs: [{ from: 1, to: 2998, product: '市郊（域）旅客列车', speed: '最高运行时速 160 公里及以下', scope: '城市市域范围内开行的铁路局集团公司管内旅客列车',
+      desc: '“S”读“市郊”，限定为城市市域范围内开行的最高运行时速 160 公里及以下的管内旅客列车。' }]
+  },
+  Z: {
+    read: '英文字母 Z', cat: '普速旅客列车', group: 'p', batch: '第一批', models: null,
+    notes: '字头保持不变，仅调整部分数字号段和读音。',
+    segs: [{ from: 1, to: 1998, product: '快速旅客列车（直达特快）', speed: '最高运行时速 160 公里', scope: '跨局、管内普速铁路',
+      desc: '“Z”按英文字母读音，表示最高运行时速 160 公里的快速旅客列车。' }]
+  },
+  N: {
+    read: '英文字母 N', cat: '普速旅客列车', group: 'p', batch: '第一批', models: null,
+    notes: '由旧版 T 字头特快普速旅客列车改设。',
+    segs: [{ from: 1, to: 1998, product: '快速旅客列车', speed: '最高运行时速 140 公里', scope: '跨局、管内普速铁路',
+      desc: '“N”按英文字母读音，表示最高运行时速 140 公里的快速旅客列车。' }]
+  },
+  V: {
+    read: '英文字母 V', cat: '普速旅客列车', group: 'p', batch: '第一批', models: null,
+    notes: '由旧版 K 字头快速旅客列车及无字头数字车次改设。',
+    segs: [
+      { from: 1, to: 5998, product: '快速旅客列车', speed: '最高运行时速 120 公里', scope: '跨局、管内普速铁路',
+        desc: '“V”按英文字母读音，表示最高运行时速 120 公里的普速旅客列车。' },
+      { from: 6001, to: 6998, product: '普通旅客快车', speed: '最高运行时速 120 公里', scope: '跨局、管内普速铁路',
+        desc: 'V6001–V6998 为普通旅客快车产品。' },
+      { from: 7001, to: 7998, product: '普通旅客慢车', speed: '最高运行时速 120 公里', scope: '跨局、管内普速铁路（含公益性“慢火车”）',
+        desc: 'V7001–V7998 为普通旅客慢车产品，公益性“慢火车”多在此号段。' }
+    ]
+  },
+  Y: {
+    read: '游', cat: '普速旅游列车', group: 'p', batch: '第一批', models: null,
+    notes: '字头保持为旅游列车专属，通过数字号段区分旅游专线与旅游专列。',
+    segs: [
+      { from: 1, to: 998, product: '普速旅游专线列车', speed: '按普速铁路速度等级', scope: '旅游专线',
+        desc: '“Y”读“游”，Y1–Y998 通过数字号段区分旅游专线产品。' },
+      { from: 1001, to: 9998, product: '普速旅游专列', speed: '按普速铁路速度等级', scope: '定制化旅游专列（团体、研学、歌迷专列等）',
+        desc: '“Y”读“游”，Y1001–Y9998 为定制化开行的旅游专列车次。' }
+    ]
+  },
+  B: {
+    read: '班', cat: '货物列车', group: 'f', batch: '第一批', models: null,
+    notes: '由旧版货运班列 X 字头改设；X 字头改由旅客列车使用。',
+    segs: [
+      { from: 1, to: 198, product: '特快城际班列', speed: '最高运行时速 160 公里', scope: '城市间点对点开行，以整车运输为主，服务电商、快递、民生物资',
+        desc: '“B”读“班”，意为班列，与既有货运班列号段对应，更容易识别和记忆。' },
+      { from: 201, to: 698, product: '快捷物流班列（快速多式联运）', speed: '最高运行时速 120 公里', scope: '京津冀、长三角、粤港澳大湾区、成渝等主要经济区域间，实行网上公开订舱',
+        desc: '快速多式联运班列中的快捷物流产品，采用集装箱“一箱到底”，提供全程物流服务。' },
+      { from: 699, to: 998, product: '快速多式联运班列', speed: '最高运行时速 120 公里', scope: '跨区域集装箱多式联运',
+        desc: '采用集装箱运输、与其他运输方式有序衔接，提供快速、准时、可靠、经济的综合物流解决方案。' },
+      { from: 1001, to: 1998, product: '快速城际班列', speed: '最高运行时速 120 公里', scope: '城市群间电商、快递、民生物资等时效性货物运输',
+        desc: '城际班列主要在城市之间点对点开行，安排固定运行时刻，促进城市群间货物快速集散。' },
+      { from: 2001, to: 2998, product: '快速中欧班列', speed: '最高运行时速 120 公里', scope: '中国与欧洲国家间国际铁路联运',
+        desc: '按固定车次、线路、班期和运行时刻开行，为跨境贸易、企业生产组织提供稳定预期。' },
+      { from: 3001, to: 3998, product: '快速中亚班列', speed: '最高运行时速 120 公里', scope: '中国与亚洲国家间国际铁路联运',
+        desc: '按固定车次、线路、班期和运行时刻开行，提供安全高效的跨境物流服务。' },
+      { from: 4001, to: 5998, product: '普快多式联运班列', speed: '最高运行时速 90 公里', scope: '跨区域集装箱多式联运',
+        desc: '普快等级的多式联运班列产品，兼顾经济性与稳定性。' },
+      { from: 6001, to: 7998, product: '普快城际班列', speed: '最高运行时速 90 公里', scope: '城市群间电商、快递、民生物资等',
+        desc: '普快等级的城际班列产品。' },
+      { from: 8001, to: 8998, product: '普快中欧班列', speed: '最高运行时速 90 公里', scope: '中国与欧洲国家间国际铁路联运',
+        desc: '普快等级的中欧班列产品。' },
+      { from: 9001, to: 9998, product: '普快中亚班列', speed: '最高运行时速 90 公里', scope: '中国与亚洲国家间国际铁路联运',
+        desc: '普快等级的中亚班列产品。' }
+    ]
+  },
+  DH: {
+    read: '动货', cat: '货物列车', group: 'f', batch: '第二批',
+    models: ['CR400AF / CR400BF 改造', 'CRH 系列动车组改造', '高铁快运动车组'],
+    notes: '新增字头，对应近年新出现的货运动车组产品。',
+    segs: [
+      { from: 1, to: 998, product: '动车组快运列车', speed: '最高运行时速 250 公里以上', scope: '高铁快运，速度快、时效强',
+        desc: '“DH”读“动货”，列车经改造后具备货运功能。' },
+      { from: 1001, to: 1998, product: '动车组快运列车', speed: '最高运行时速 250 公里及以下', scope: '高铁快运',
+        desc: '“DH”读“动货”，列车经改造后具备货运功能。' }
+    ]
+  },
+  DJ: {
+    read: '动检', cat: '路用列车', group: 'w', batch: '未单列',
+    models: ['CRH 系列检测车', 'CR400AF/BF 检测车', '综合检测列车'],
+    notes: '由“DJ”加 1–5 位数字组成，沿用动车组检测、确认列车用途。',
+    segs: [{ from: 1, to: 99999, label: 'DJ＋1~5 位数字', product: '动车组检测、确认列车', speed: '按检测作业需要', scope: '线路检测、确认作业',
+      desc: '“DJ”读“动检”，用于动车组检测、确认等路用作业。' }]
+  }
+};
+
+const NUMERIC_GROUPS = [
+  { from: 71001, to: 77998, product: '重载货物列车', speed: '最高运行时速 90 公里', scope: '主要煤运通道等重载运输线路',
+    desc: '大宗直达货物列车，服务电煤、粮食、春耕化肥等国计民生重点物资运输，实行运力倾斜、优先保障。' },
+  { from: 80001, to: 84998, product: '煤炭直达列车', speed: '最高运行时速 90 公里', scope: '电煤等重点物资运输',
+    desc: '大宗直达货物列车，无字头字母的 5 位纯数字车次，按运输范围、功能、物资划分号段。' },
+  { from: 85001, to: 85998, product: '石油直达列车', speed: '最高运行时速 90 公里', scope: '石油等重点物资运输',
+    desc: '大宗直达货物列车，无字头字母的 5 位纯数字车次，按运输范围、功能、物资划分号段。' }
+];
+
+/* =======================================================
+   二、查询逻辑
+   ======================================================= */
+function normalize(raw) {
+  if (!raw) return '';
+  let s = String(raw);
+  s = s.replace(/[\uFF01-\uFF5E]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0xFEE0));
+  s = s.replace(/\u3000/g, ' ');
+  s = s.replace(/[\s\-—_·、,，.。]/g, '');
+  return s.toUpperCase();
+}
+
+function lookup(raw) {
+  const code = normalize(raw);
+  if (!code) return { status: 'empty', msg: '请输入要查询的车次，例如 G1、D27、Z19、B2001。' };
+  if (/^\d+$/.test(code)) return lookupNumeric(code);
+
+  const m = code.match(/^([A-Z]{1,2})(\d{1,5})$/);
+  if (!m) return { status: 'invalid', msg: '车次格式不正确。新版车次一般由 1–2 位字头字母加 1–4 位数字组成（如 G1、D27、DH1、DJ5）；大宗直达货物列车为 5 位纯数字（如 71001）。' };
+
+  const head = m[1], numStr = m[2], num = Number(numStr), def = HEADS[head];
+  if (!def) return { status: 'invalid', msg: '未识别字头「' + head + '」。新版编排可用的字头有：X、G、T、K、D、C、S、Z、N、V、Y（旅客列车），B、DH（货物列车），DJ（路用列车）。' };
+
+  let seg = def.segs.find(s => num >= s.from && num <= s.to);
+  let warn = '';
+  if (!seg) {
+    seg = def.segs.slice().sort((a, b) => {
+      const da = Math.min(Math.abs(num - a.from), Math.abs(num - a.to));
+      const db = Math.min(Math.abs(num - b.from), Math.abs(num - b.to));
+      return da - db;
+    })[0];
+    warn = '数字「' + numStr + '」不在 ' + head + ' 字头的规定号段内，以下按最接近的号段归类，请核对车次。';
+  }
+
+  return {
+    status: 'ok', code: head + numStr, head: head, read: def.read, cat: def.cat,
+    group: def.group, batch: def.batch, notes: def.notes, models: def.models || null,
+    segs: def.segs, segObj: seg, product: seg.product, speed: seg.speed,
+    scope: seg.scope, desc: seg.desc,
+    segLabel: seg.label || (head + seg.from + '–' + head + seg.to), warn: warn
+  };
+}
+
+function lookupNumeric(code) {
+  if (code.length === 5) {
+    const n = Number(code);
+    const g = NUMERIC_GROUPS.find(x => n >= x.from && n <= x.to);
+    if (g) {
+      return {
+        status: 'ok', code: code, head: '（无字头）', read: '纯数字', cat: '货物列车',
+        group: 'f', batch: '第一批',
+        notes: '大宗直达货物列车为无字头字母的 5 位纯数字，按运输范围、功能、物资划分号段。',
+        models: null, segs: NUMERIC_GROUPS.map(x => ({ ...x, label: String(x.from) + '–' + String(x.to) })),
+        segObj: null, product: g.product, speed: g.speed, scope: g.scope, desc: g.desc,
+        segLabel: g.from + '–' + g.to, warn: ''
+      };
+    }
+    return {
+      status: 'ok', code: code, head: '（无字头）', read: '纯数字', cat: '路用列车',
+      group: 'w', batch: '未单列',
+      notes: '轨道车、接触网作业车、大型养路机械、路内通勤列车、救援列车等路用列车车次为 5 位纯数字。',
+      models: null, segs: [], segObj: null, product: '路用列车', speed: '按作业需要',
+      scope: '线路检测、维修作业、应急救援等',
+      desc: '该车次未落在已知大宗直达货物号段内，按路用列车解读。路用列车通过数字号段细化区分类型。',
+      segLabel: '5 位纯数字', warn: ''
+    };
+  }
+  return { status: 'invalid', msg: '新版编排下，1–4 位纯数字车次已不再使用（原无字头普速旅客列车已改为 V 字头）。请核对后重新输入，例如 V6001、Z19、N301。' };
+}
+
+/* =======================================================
+   三、渲染
+   ======================================================= */
+function esc(s) {
+  return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
+function groupClass(g) { return g === 'f' ? 'f' : (g === 'w' ? 'w' : 'p'); }
+
+function render(res) {
+  const box = document.getElementById('result');
+  if (res.status === 'empty') { box.innerHTML = ''; return; }
+
+  if (res.status !== 'ok') {
+    box.innerHTML = '<div class="card card-error"><div class="err-icon" aria-hidden="true">!</div><p>' + esc(res.msg) + '</p></div>';
+    return;
+  }
+
+  let segListHtml = '';
+  if (res.segs && res.segs.length > 1) {
+    const items = res.segs.map(s => {
+      const label = s.label || (res.head + s.from + '–' + res.head + s.to);
+      const active = (res.segObj && s === res.segObj) ? ' active' : '';
+      return '<li class="seg' + active + '"><span class="seg-range">' + esc(label) + '</span><span class="seg-name">' + esc(s.product) + '</span></li>';
+    }).join('');
+    segListHtml = '<p class="seg-title">' + esc(res.head) + ' 字头号段一览</p><ul class="seg-list">' + items + '</ul>';
+  }
+
+  const batchCls = (res.batch === '第一批' || res.batch === '第二批') ? ' batch on' : ' batch';
+
+  let modelsHtml = '';
+  if (res.models && res.models.length) {
+    modelsHtml = '<div class="models"><p class="models-title">可能车型</p><div class="model-tags">' +
+      res.models.map(m => '<span class="model-tag">' + esc(m) + '</span>').join('') + '</div></div>';
+  }
+
+  box.innerHTML =
+    '<div class="card">' +
+      '<div class="card-top">' +
+        '<span class="code">' + esc(res.code) + '</span>' +
+        '<span class="read">读作「' + esc(res.read) + '」</span>' +
+        '<span class="tag ' + groupClass(res.group) + '">' + esc(res.cat) + '</span>' +
+        '<span class="tag' + batchCls + '">' + esc(res.batch) + '变更</span>' +
+      '</div>' +
+      (res.warn ? '<div class="warn"><span aria-hidden="true">⚠</span><span>' + esc(res.warn) + '</span></div>' : '') +
+      '<div class="grid">' +
+        '<div class="cell"><span class="k">用途 / 产品类别</span><span class="v">' + esc(res.product) + '</span></div>' +
+        '<div class="cell"><span class="k">速度等级</span><span class="v">' + esc(res.speed) + '</span></div>' +
+        '<div class="cell wide"><span class="k">运行范围</span><span class="v">' + esc(res.scope) + '</span></div>' +
+        '<div class="cell wide"><span class="k">号段定位</span><span class="v mono">' + esc(res.segLabel) + '</span></div>' +
+      '</div>' +
+      modelsHtml +
+      '<p class="desc">' + esc(res.desc) + '</p>' +
+      (res.notes ? '<div class="note"><span class="ico" aria-hidden="true">i</span><span>' + esc(res.notes) + '</span></div>' : '') +
+      segListHtml +
+    '</div>';
+}
+
+/* =======================================================
+   四、交互
+   ======================================================= */
+const SAMPLE = ['G1', 'D27', 'Z19', 'V6001', 'Y1001', 'B2001', 'DH1', '71001', 'S1', 'C2001', 'DJ5'];
+
+function buildChips() {
+  document.getElementById('chips').innerHTML = SAMPLE.map(c =>
+    '<button type="button" class="chip" data-code="' + c + '">' + c + '</button>'
+  ).join('');
+}
+
+function syncUrl(code) {
+  try {
+    const url = new URL(location.href);
+    if (code) url.searchParams.set('code', code);
+    else url.searchParams.delete('code');
+    history.replaceState(null, '', url);
+  } catch (e) {}
+}
+
+function doQuery(value) {
+  const res = lookup(value);
+  render(res);
+  if (res.status === 'ok') syncUrl(res.code);
+  if (res.status === 'ok' || res.status === 'invalid') {
+    const box = document.getElementById('result');
+    if (box.offsetParent !== null) box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  doQuery(document.getElementById('input').value);
+});
+
+document.getElementById('chips').addEventListener('click', function (e) {
+  const btn = e.target.closest('.chip');
+  if (!btn) return;
+  const code = btn.dataset.code;
+  document.getElementById('input').value = code;
+  doQuery(code);
+});
+
+document.getElementById('filter').addEventListener('click', function (e) {
+  const btn = e.target.closest('.fbtn');
+  if (!btn) return;
+  Array.from(this.querySelectorAll('.fbtn')).forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  const g = btn.dataset.g;
+  Array.from(document.querySelectorAll('.head-card')).forEach(card => {
+    card.classList.toggle('hidden', g !== 'all' && card.dataset.g !== g);
+  });
+});
+
+/* =======================================================
+   五、主题切换
+   ======================================================= */
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById('themeBtn');
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+  function apply(isDark) {
+    if (isDark) root.setAttribute('data-theme', 'dark');
+    else root.removeAttribute('data-theme');
+    if (meta) meta.setAttribute('content', isDark ? '#0a121c' : '#0a2340');
+    if (btn) btn.setAttribute('title', isDark ? '切换浅色模式' : '切换深色模式');
+  }
+
+  apply(root.getAttribute('data-theme') === 'dark');
+
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') !== 'dark';
+    apply(next);
+    try { localStorage.setItem('theme', next ? 'dark' : 'light'); } catch (e) {}
+  });
+
+  mq.addEventListener('change', e => {
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (err) {}
+    if (!saved) apply(e.matches);
+  });
+})();
+
+/* 初始化 */
+buildChips();
+
+(function () {
+  const p = new URLSearchParams(location.search).get('code');
+  if (p) {
+    document.getElementById('input').value = p;
+    doQuery(p);
+  }
+})();
+</script>
+</body>
+</html>
